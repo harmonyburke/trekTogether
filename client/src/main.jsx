@@ -5,6 +5,7 @@ import App from './App.jsx'
 // import css file
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Dashboard from './pages/Dashboard.jsx';
+import TripPage from './components/TripPage.jsx';
 
 // import components
 
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Dashboard />
+      },
+      {
+        path: 'trip-page',
+        element: <TripPage />
       }
     ]
   },

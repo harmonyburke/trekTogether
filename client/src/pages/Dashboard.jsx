@@ -7,6 +7,7 @@ const Dashboard = () => {
 
     const tripIdeas = [
         {
+            id: 1,
             img: mexicoPic,
             where: "Mexico City",
             departureDate: "10/01/2024",
@@ -14,6 +15,7 @@ const Dashboard = () => {
             createdAt: "2022-01-04",
         },
         {
+            id: 2,
             img: mexicoPic,
             where: "Mexico City",
             departureDate: "10/01/2024",
@@ -21,6 +23,7 @@ const Dashboard = () => {
             createdAt: "2022-01-04",
         },
         {
+            id: 3,
             img: mexicoPic,
             where: "Mexico City",
             departureDate: "10/01/2024",
@@ -28,6 +31,7 @@ const Dashboard = () => {
             createdAt: "2022-01-04",
         },
         {
+            id: 4,
             img: mexicoPic,
             where: "Mexico City",
             departureDate: "10/01/2024",
@@ -35,6 +39,7 @@ const Dashboard = () => {
             createdAt: "2022-01-04",
         },
         {
+            id: 5,
             img: mexicoPic,
             where: "Mexico City",
             departureDate: "10/01/2024",
@@ -42,6 +47,7 @@ const Dashboard = () => {
             createdAt: "2022-01-04",
         },
         {
+            id: 6,
             img: mexicoPic,
             where: "Mexico City",
             departureDate: "10/01/2024",
@@ -52,9 +58,9 @@ const Dashboard = () => {
 
     return ( 
         <section>
-            {tripIdeas.map((tripIdea, index) => (
+            {tripIdeas.map((tripIdea) => (
                 <TripIdea 
-                    key={index}
+                    key={tripIdea.id}
                     img={tripIdea.img}
                     where={tripIdea.where}
                     departureDate={tripIdea.departureDate}

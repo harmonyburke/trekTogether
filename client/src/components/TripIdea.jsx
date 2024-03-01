@@ -7,7 +7,7 @@ import "../style/tripIdea.css"
 const TripIdea = ( trip ) => {
     return ( 
        <section className="tripIdea-container">
-            <a href="/trip/:id">
+            <a className='center' href="/trip-page">
             <div className="cardHeader">
                 <img src={trip.img}/>
             </div>
@@ -23,5 +23,3 @@ const TripIdea = ( trip ) => {
 }
  
 export default TripIdea;
-
-// img, where, when
