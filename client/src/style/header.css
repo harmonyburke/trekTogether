@@ -1,0 +1,40 @@
+:root {
+    --grey: #292F36;
+    --white: #fffeff;
+    --green: #96F550;
+}
+
+/* logo */
+
+
+#logo {
+    width: 80px;
+    padding: 0;
+    float: left;
+}
+
+/* Header */
+
+
+
+.header {
+    margin: 1em;
+    border-bottom: solid 2px var(--white);
+}
+
+
+header h1 {
+    font-size: 3em;
+}
+
+header a {
+    text-decoration: none;
+}
+
+.green {
+    color: var(--green);
+}
+
+.slogan {
+    margin-bottom: 1em;
+}

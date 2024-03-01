@@ -1,12 +1,11 @@
 import './App.css'
+import Header from './components/Header'
 
 const App = () => {
 
   return (
     <>
-      <section>
-        <h1>Main page is connected!!</h1>
-      </section>
+    <Header></Header>
     </>
   )
 }
