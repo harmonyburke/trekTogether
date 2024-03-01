@@ -38,6 +38,7 @@ footer h3 {
     background-color: var(--green);
     padding: 0 .1em;
     border-radius: 5px;
+    border: solid 1px var(--white)
 }
 
 /* tablets */
