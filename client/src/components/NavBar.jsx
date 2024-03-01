@@ -2,34 +2,40 @@ import { Link } from 'react-router-dom';
 import "../style/navBar.css"
 
 const NavBar = () => {
+
+    const navLinks = [
+        {
+            link: "/",
+            name: "Dashboard",
+        },
+        {
+            link: "/my-trips",
+            name: "My Trips",
+        },
+        {
+            link: "/add-trip",
+            name: "Add Trip",
+        },
+        {
+            link: "/login-signup",
+            name: "Log In/Sign Up",
+        },
+    ]
+
     return ( 
         <nav className="nav main-nav">
-
-        <ul>
-          <li className='nav-list'>
-              <Link className="dashboard-link" 
-              to="/"
-              >Dashboard</Link>
-          </li>
-
-          <li className='nav-list'>
-              <Link className="my-trips-link" 
-              to="/my-trips"
-              >My Trips</Link>
-          </li>
-
-          <li className='nav-list'>
-              <Link className="add-trip-link" 
-              to="/add-trip"
-              >Add Trip</Link>
-              </li>
-
-          <li className='nav-list'>
-              <Link className="login-signup-link" 
-              to="/login-signup"
-              >Log in/Sign Up</Link>
-          </li>
-        </ul>
+            {navLinks.map((navLink) => (
+                <div className='nav-list' key={navLink.name}>
+                     <ul>
+                        <li >
+                        <Link 
+                        to={navLink.link}
+                        >{navLink.name}</Link>
+                        </li>
+                    </ul>
+                </div>
+            ))}
+       
           
       </nav>
     );
