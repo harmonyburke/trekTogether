@@ -1,11 +1,4 @@
-:root {
-    --grey: #292F36;
-    --white: #fffeff;
-    --green: #96F550;
-}
-
 /* logo */
-
 
 #logo {
     width: 80px;
@@ -14,8 +7,6 @@
 }
 
 /* Header */
-
-
 
 .header {
     margin: 1em;
@@ -35,6 +26,18 @@ header a {
     color: var(--green);
 }
 
+/* slogan */
 .slogan {
     margin-bottom: 1em;
 }
+
+ /* tablets */
+ @media screen and (max-width: 820px) {
+    .header {
+        text-align: center;
+    }
+
+    #logo {
+        float: none;
+    }
+ }

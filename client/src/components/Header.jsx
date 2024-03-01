@@ -1,6 +1,8 @@
 import "../style/header.css"
 import logo from '../assets/trekTogether.png'
 
+import NavBar from "./NavBar"
+
 const Header = () => {
 
     const trek = 'trek'
@@ -18,6 +20,7 @@ const Header = () => {
                 </a>
             </h1>
             <p className="slogan">{slogan}</p>
+            <NavBar />
             </div>
          </header> );
 }
