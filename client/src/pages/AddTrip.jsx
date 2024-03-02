@@ -15,7 +15,7 @@ const AddTrip = () => {
                          {/* label for image */}
                     <label htmlFor="fileInput" className="title custom-file-upload color-change">
                     <input type="file" id="fileInput" className="color-change" hidden />
-                    Click here to upload an image of your destination here!
+                    Click here to upload an image of your destination!
                     </label>
                     </div>
 
