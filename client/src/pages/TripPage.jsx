@@ -39,7 +39,6 @@ const TripPage = () => {
                 </p>
                </div>
                <button id="join-btn" className="color-change" type='submit'>✔ Join</button>
-
             </div>
             </div>
             </div>
