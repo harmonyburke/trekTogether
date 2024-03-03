@@ -9,15 +9,15 @@ const NavBar = () => {
             name: "Dashboard",
         },
         {
-            link: "/my-trips",
+            link: "/mytrip",
             name: "My Trips",
         },
         {
-            link: "/add-trip",
+            link: "/addtrip",
             name: "Add Trip",
         },
         {
-            link: "/login-signup",
+            link: "/auth",
             name: "Log In/Sign Up",
         },
     ]

@@ -9,6 +9,11 @@ import App from './App.jsx'
 import Dashboard from './pages/Dashboard.jsx';
 import TripPage from './pages/TripPage.jsx';
 import AddTrip from './pages/AddTrip.jsx';
+import Auth from './pages/Auth.jsx';
+import Login from './components/Login.jsx';
+import Signup from './components/SignUp.jsx';
+import MyTrip from './pages/MyTrips.jsx';
+
 
 // import components
 
@@ -26,8 +31,24 @@ const router = createBrowserRouter([
         element: <TripPage />
       },
       {
-        path: 'add-trip',
+        path: 'addtrip',
         element: <AddTrip />
+      },
+      {
+        path: 'auth',
+        element: <Auth />
+      },
+      {
+        path: 'login',
+        element: <Login />
+      },
+      {
+        path: 'signup',
+        element: <Signup />
+      },
+      {
+        path: 'mytrip',
+        element: <MyTrip />
       }
     ]
   },
