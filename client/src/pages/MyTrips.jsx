@@ -1,11 +1,38 @@
-import '../style/myTrip.css'
+import { useState, useEffect } from 'react'
 
-const MyTrip = () => {
-    return ( 
+import dummyData from '../dummyData.json'
+import TripList from '../components/TripList'
+import '../style/myTrips.css'
+import defaultPic from '../assets/defaultPic.jpeg'
+
+const MyTrips = () => {
+    const [img, setImg] = useState(defaultPic);
+    const [trips, setTrip] = useState(dummyData);
+
+    // Update image state based on database or default image
+    useEffect(() => {
+        const tripWithImg = trips.find((trip) => trip.img);
+        if (tripWithImg) {
+            setImg(tripWithImg.img);
+        }
+    }, [trips]);
+
+    return (
         <section>
-            <h1>Connected</h1>
+            {trips.filter((trip) => trip.joined === true).map((trip) => (
+                <TripList
+                    key={trip.id}
+                    img={img}
+                    where={trip.where}
+                    departureDate={trip.departureDate}
+                    returnDate={trip.returnDate}
+                />
+                
+            ))}
+
+           
         </section>
-     );
-}
+    );
+};
  
-export default MyTrip;
+export default MyTrips;

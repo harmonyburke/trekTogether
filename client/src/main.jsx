@@ -12,7 +12,7 @@ import AddTrip from './pages/AddTrip.jsx';
 import Auth from './pages/Auth.jsx';
 import Login from './components/Login.jsx';
 import Signup from './components/SignUp.jsx';
-import MyTrip from './pages/MyTrips.jsx';
+import MyTrips from './pages/MyTrips.jsx';
 
 
 // import components
@@ -27,7 +27,7 @@ const router = createBrowserRouter([
         element: <Dashboard />
       },
       {
-        path: 'trip-page',
+        path: 'trippage',
         element: <TripPage />
       },
       {
@@ -47,8 +47,8 @@ const router = createBrowserRouter([
         element: <Signup />
       },
       {
-        path: 'mytrip',
-        element: <MyTrip />
+        path: 'mytrips',
+        element: <MyTrips />
       }
     ]
   },

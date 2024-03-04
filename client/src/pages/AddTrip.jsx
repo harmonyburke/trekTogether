@@ -9,7 +9,7 @@ const AddTrip = () => {
                     {/* label for WHERE  */}
                     <label>Where to?</label> <br />
                     {/* input for WHERE */}
-                    <input id="whereInput" className='title input' type="text" name="where" placeholder="Tokyo.. Paris.. Mexico.." /><br />
+                    <input id="whereInput" className='title' type="text" name="where" placeholder="Tokyo.. Paris.. Mexico.." /><br />
                     {/* input for IMG upload */}
                     <div className="img-upload color-change">
                          {/* label for image */}
@@ -59,7 +59,7 @@ const AddTrip = () => {
                                 <textarea type="date" cols="200" rows="11" placeholder="We're Excited to hear your plan!!" className="color-change"/>
                             </li> 
                             <div className="btn-container color-change">
-                                <button type="submit" className="addTrip-submit color-change">Submit</button>
+                                <button type="submit" className="addTrip-submit color-change">Add Trip</button>
                             </div>
                         </ul> 
                     </div>

@@ -1,9 +1,9 @@
+import randomImg from "../utils/randomImg";
 
 const Signup = () => {
     return ( 
         <section>
-            <h2>Sign Up</h2>
-            <form action="/login">
+            <form id="signUp-container" action="/signup" style={{ backgroundImage: `url(${randomImg()})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
                  {/* Name input */}
                  <input className='input'
                 type="text"

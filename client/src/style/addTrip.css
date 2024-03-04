@@ -13,6 +13,7 @@
     border-radius: 20px;
     box-shadow: 10px 10px 5px black;
     width: 50%;
+    outline-color: var(--green);
 }
 
 #whereInput:hover {
@@ -63,6 +64,7 @@
     width: 45%;
     border-radius: 10px;
     box-shadow: 5px 5px 2.5px black;
+
 }
 
 #dateInput:hover {
@@ -125,6 +127,8 @@
     color: var(--white);
     border-radius: 5px;
     padding: .1em .5em;
+    outline-color: var(--green);
+
 }
 
 .budgetInput input::placeholder {
@@ -164,6 +168,8 @@
     resize: none;
     border-radius: 10px;
     font-size: .75em;
+    outline-color: var(--green);
+
 }
 
 #descriptionInput li textarea:hover {
@@ -216,6 +222,10 @@ textarea:focus::-ms-placeholder {
 }
 
 @media screen and (max-width: 1100px) {
+
+    #whereInput {
+        font-size: .75em;
+    }
 
     .budgetInput input {
         padding: .1em .5em;

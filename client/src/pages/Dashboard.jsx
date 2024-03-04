@@ -1,73 +1,36 @@
-import TripIdea from "../components/TripIdea";
-import "../style/dashboard.css"
-import mexicoPic from "../assets/picOfMexico.jpg"
+import { useState, useEffect } from 'react'
+
+import defaultPic from '../assets/defaultPic.jpeg'
+import dummyData from '../dummyData.json'
+import TripList from "../components/TripList";
+import '../style/dashboard.css'
+
 
 
 const Dashboard = () => {
 
-    const tripIdeas = [
-        {
-            id: 1,
-            img: mexicoPic,
-            where: "Mexico City",
-            departureDate: "10/01/2024",
-            returnDate: "10/21/2024",
-            createdAt: "2022-01-04",
-        },
-        {
-            id: 2,
-            img: mexicoPic,
-            where: "Mexico City",
-            departureDate: "10/01/2024",
-            returnDate: "10/21/2024",
-            createdAt: "2022-01-04",
-        },
-        {
-            id: 3,
-            img: mexicoPic,
-            where: "Mexico City",
-            departureDate: "10/01/2024",
-            returnDate: "10/21/2024",
-            createdAt: "2022-01-04",
-        },
-        {
-            id: 4,
-            img: mexicoPic,
-            where: "Mexico City",
-            departureDate: "10/01/2024",
-            returnDate: "10/21/2024",
-            createdAt: "2022-01-04",
-        },
-        {
-            id: 5,
-            img: mexicoPic,
-            where: "Mexico City",
-            departureDate: "10/01/2024",
-            returnDate: "10/21/2024",
-            createdAt: "2022-01-04",
-        },
-        {
-            id: 6,
-            img: mexicoPic,
-            where: "Mexico City",
-            departureDate: "10/01/2024",
-            returnDate: "10/21/2024",
-            createdAt: "2022-01-04",
-        },
-    ]
+    const [ img, setImg ] = useState(defaultPic);
+    const [ trips, setTrip ] = useState(dummyData)
+
+        // Update image state based on database or default image
+        useEffect(() => {
+            const tripWithImg = trips.find((trip) => trip.img);
+            if (tripWithImg) {
+                setImg(tripWithImg.img);
+            }
+        }, [trips]);
 
     return ( 
         <section>
-            {tripIdeas.map((tripIdea) => (
-                <TripIdea 
-                    key={tripIdea.id}
-                    img={tripIdea.img}
-                    where={tripIdea.where}
-                    departureDate={tripIdea.departureDate}
-                    returnDate={tripIdea.returnDate}
+            {trips.map((trip) => (
+                <TripList 
+                    key={trip.id}
+                    img={img}
+                    where={trip.where}
+                    departureDate={trip.departureDate}
+                    returnDate={trip.returnDate}
                 />
             ))}
-            
         </section>
      );
 }
