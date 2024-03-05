@@ -1,2 +1,75 @@
 /* addTrip */
 
+#whereInput {
+ font-size: 1.5em;
+ margin: 1em;
+ border-radius: 10px;
+ text-align: center;
+ box-shadow: 10px 10px 2px black;
+}
+
+#whereInput:hover,
+.custom-file-upload:hover,
+.dateInput:hover,
+.budgetInput:hover,
+.textAreaInput:hover {
+    box-shadow: 5px 5px 2.5px black;
+    border: solid 1px var(--green);
+}
+
+#whereInput:focus,
+.custom-file-upload:focus,
+.dateInput:focus,
+.budgetInput:focus,
+.textAreaInput:focus {
+    outline: var(--green);
+}
+
+.custom-file-upload {
+    font-size: 1.5em;
+    padding: .5em;
+    border-radius: 20px;
+    margin: 2em 0;
+    box-shadow: 10px 10px 2px black;
+}
+
+.dateBudget-container {
+    font-size: 1em;
+    margin: 3em 0 1em 0;
+}
+
+.dateInput,
+.budgetInput {
+    text-align: center;
+    font-size: 1em;
+    padding: .25em;
+    border-radius: 10px;
+    margin: .75em 0;
+    box-shadow: 10px 10px 2px black;
+}
+
+.textAreaInput {
+    text-align: center;
+    resize: none;
+    padding: 1em;
+    width: 75%;
+    height: 15em;
+    border-radius: 20px;
+    box-shadow: 10px 10px 2px black;
+}
+
+.addTrip-submit {
+    margin: 1em 0 1em 0;
+    font-size: 2em;
+    padding: .5em 2em;
+    border-radius: 50px;
+    color: var(--grey);
+    background-color: var(--green);
+    box-shadow: 10px 10px 2px black;
+}
+
+.addTrip-submit:hover {
+    box-shadow: 5px 5px 2.5px black;
+    border: solid 2px var(--white);
+    color: var(--white);
+}
