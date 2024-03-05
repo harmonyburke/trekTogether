@@ -44,12 +44,19 @@ section {
     margin: 1em;
 }
 
+#edit, #delete {
+    border: solid 1px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 2.5px black;
+    padding: .1em;
+}
+
 #edit:hover, #delete:hover {
     background-color: var(--green);
     border: solid 1px var(--white);
     padding: .1em;
     border-radius: 10px;
-    box-shadow: 5px 5px 2px black;
+    box-shadow: 2px 2px 2px black;
 }
 
 #edit:hover {

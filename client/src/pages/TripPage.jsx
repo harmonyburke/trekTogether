@@ -1,18 +1,17 @@
 import formatDistance from 'date-fns/formatDistanceToNow'
-import { useState } from 'react'
-
 import dummyData from '../dummyData.json'
+import defaultPic from '../assets/defaultPic.jpeg'
 import '../style/tripPage.css'
 
 const TripPage = () => {
 
-    const [ tripInfo, setTripInfo ] = useState(dummyData[0])
+    const tripInfo = dummyData[0]
 
     return ( 
         <section>
             <div className='tripPage-container'>
                 <h2 className='title tripInfo-title'>{tripInfo.where}</h2>
-                <img src={tripInfo.img}/>
+                <img src={tripInfo.img || defaultPic}/>
                 <h3 className="title tripInfo-description-title">Description</h3>
             <div className="info-container">
                 <p className="content">{tripInfo.description}</p>
