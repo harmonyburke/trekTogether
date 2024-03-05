@@ -11,7 +11,7 @@ const resolvers = {
        trip: async (parent, { _id }) => Trip.findById(_id),
     },
     
-    Mutations: {
+    Mutation: {
         // function to add a new user
         addUser: async (parent, args) => {
             const user = await User.create(args);
@@ -51,7 +51,7 @@ const resolvers = {
             }
             // logic to update the string of travelers on the trip
             if (travelerIds && travelerIds.length > 0) {
-                //  $in- query operator used to specify an array of values (travelers from users) to match in query condition
+                //  $in- query operator used to specify an array of values (travelers from users) to match in query condition (reference: MongoDB aggregations)
                 const users = await User.find({ _id: { $in: travelerIds } });
                 trip.travelers.push(...users);
                 await trip.save();

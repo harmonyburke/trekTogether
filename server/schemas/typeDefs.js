@@ -1,5 +1,4 @@
 const typeDefs = `
-
 type Trip {
     _id: ID
     tripName: String!
