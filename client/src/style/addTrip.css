@@ -1,5 +1,14 @@
 /* addTrip */
 
+
+label {
+    background-color: transparent;
+}
+
+.whereTo {
+    margin: 400px;
+}
+
 #whereInput {
  font-size: 1.5em;
  margin: 1em;
@@ -34,6 +43,11 @@
 }
 
 .dateBudget-container {
+    margin: 3em 0 3em 0;
+    background-color: transparent;
+}
+
+.departure-date {
     font-size: 1em;
     margin: 3em 0 1em 0;
 }

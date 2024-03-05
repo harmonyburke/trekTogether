@@ -6,6 +6,10 @@ import "../style-components/tripList.css"
 
 const TripList = ( trip ) => {
 
+// const imgStyle = {
+//     backgroundImage: `url(${trip.img || defaultPic})`,
+// }
+
 return ( 
        <section className="tripIdea-container">
             <a className='center' href="/trippage">
@@ -18,7 +22,7 @@ return (
                     <p className='date'>{trip.departureDate} - {trip.returnDate}</p>
                     <p className="createdAt">{formatDistance(new Date("2022-01-04"), { addSuffix: true })}</p>
                     {trip.showDelete && (
-                    <><button id="delete" className='dashboard-view myTrips-view material-symbols-outlined'>delete</button><button id="edit" className='dashboard-view myTrips-view material-symbols-outlined'>Edit</button></>
+                    <><button id="edit" className='dashboard-view myTrips-view material-symbols-outlined'>Edit</button><button id="delete" className='dashboard-view myTrips-view material-symbols-outlined'>delete</button></>
                     )}
 
                 </div>
