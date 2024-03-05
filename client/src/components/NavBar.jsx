@@ -3,6 +3,8 @@ import "../style-components/navBar.css"
 
 const NavBar = () => {
 
+    const isLoggedIn = true
+
     const navLinks = [
         {
             link: "/",
@@ -17,9 +19,9 @@ const NavBar = () => {
             name: "Add Trip",
         },
         {
-            link: "/auth",
-            name: "Log In/Sign Up",
-        },
+            link: isLoggedIn ? "/" : "/auth", //Conditionally set the link based on login status
+            name: isLoggedIn ? "Log Out" : "Log In/Sign Up" //Conditionally set the link based on login status
+        }
     ]
 
     return ( 
