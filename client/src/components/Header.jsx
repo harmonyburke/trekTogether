@@ -1,4 +1,4 @@
-import "../style/header.css"
+import "../style-components/header.css"
 import logo from '../assets/trekTogether.png'
 
 import NavBar from "./NavBar"

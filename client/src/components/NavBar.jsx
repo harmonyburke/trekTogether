@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import "../style/navBar.css"
+import "../style-components/navBar.css"
 
 const NavBar = () => {
 
@@ -9,7 +9,7 @@ const NavBar = () => {
             name: "Dashboard",
         },
         {
-            link: "/mytrip",
+            link: "/mytrips",
             name: "My Trips",
         },
         {

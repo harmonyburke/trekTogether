@@ -1,18 +1,14 @@
-import '../style/auth.css'
+import randomImg from '../utils/randomImg';
+import  '../style/auth.css'
 
 const Auth = () => {
+
     return ( 
-    <section className='auth-container'>
-        <div className="login-container">
-            <form action="/login" className='login'>
-            <button id='login' className='auth-btn'>Login</button>
-            </form>
-        </div>
-        <div className="signUp-container">
-        <form action="/signup" className='signup'>
-            <button id='signup' className='auth-btn'>Sign Up</button>
+    <section >
+        <form style={{ backgroundImage: `url(${randomImg()})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} id='auth-container' className='login'>
+            <button id='login' className='auth-btn' formAction='/login'>Login</button> <br />
+            <button id='signup' className='auth-btn' formAction='/signup'>Sign Up</button>
         </form>
-        </div>
     </section>
     );
 }

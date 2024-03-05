@@ -1,11 +1,26 @@
-import '../style/myTrip.css'
+import { useState, useEffect } from 'react'
 
-const MyTrip = () => {
-    return ( 
+import trips from '../dummyData.json'
+import TripList from '../components/TripList'
+import defaultPic from '../assets/defaultPic.jpeg'
+import '../style/myTrips.css'
+
+const MyTrips = () => {
+
+    return (
         <section>
-            <h1>Connected</h1>
+            {trips.filter((trip) => trip.joined === true).map((trip) => (
+                <TripList
+                    key={trip.id}
+                    img={trip.img || defaultPic}
+                    where={trip.where}
+                    departureDate={trip.departureDate}
+                    returnDate={trip.returnDate}
+                    showDelete={true}
+                />    
+            ))}
         </section>
-     );
-}
+    );
+};
  
-export default MyTrip;
+export default MyTrips;

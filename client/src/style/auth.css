@@ -1,13 +1,9 @@
 /* Auth */
 
-.auth-container {
-    text-align: center;
-}
-
 .auth-btn {
-    font-size: 2em;
+    font-size: 1.5em;
     padding: .5em 3em;
-    margin: 3em;
+    margin: 3em 0 3em 0;
     border-radius: 100px;
     box-shadow: 10px 10px 5px black;
     text-align: center;
@@ -21,9 +17,13 @@
     box-shadow: 2.5px 2.5px 2.5px var(--white);
 }
 
+.auth-btn:active {
+    box-shadow: none;
+}
+
 .input {
     width: 20%;
-    margin: 1em;
+    margin: 2.5em;
     text-align: center;
     padding: .5em 0;
     background-color: var(--white);
@@ -45,6 +45,7 @@
     box-shadow: 10px 10px 5px black;
     background-color: var(--green);
     color: var(--grey);
+    margin-bottom: 1em;
 }
 
 #login-signup-btn:hover {
