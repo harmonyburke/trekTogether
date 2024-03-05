@@ -35,7 +35,7 @@ type Mutation {
         ): Auth
         createTrip(
             tripName: String!
-            budget: Number!
+            budget: Float!
             location: String!
             details: String!
         ): Trip

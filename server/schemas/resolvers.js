@@ -11,7 +11,7 @@ const resolvers = {
        trip: async (parent, { _id }) => Trip.findById(_id),
     },
     
-    Mutations: {
+    Mutation: {
         // function to add a new user
         addUser: async (parent, args) => {
             const user = await User.create(args);
