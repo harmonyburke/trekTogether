@@ -6,7 +6,7 @@ const tripSchema = new Schema ({
         required: true
     },
     budget: {
-        type: Number,
+        type: Float,
         required:true,
         
     },
