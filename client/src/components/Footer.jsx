@@ -12,44 +12,52 @@ const Footer = () => {
   };
 
   return (
-      <footer>
-          <h3 className="title">Created By:</h3>
-          {creators.map((creator) => (
-              <div key={creator.name} className="creator-container">
-                  <div className="creator">
-                      <p>{creator.name}</p>
-                      <ul>
-                          <li>
-                              <a href={creator.githubLink}>
-                                  <FontAwesomeIcon
-                                      className="icon-size icon"
-                                      icon={socialIcons.githubIcon}
-                                  />
-                              </a>
-                          </li>
-                          <li>
-                              <a href={creator.linkedinLink}>
-                                  <FontAwesomeIcon
-                                      className="icon-size icon"
-                                      icon={socialIcons.linkedinIcon}
-                                  />
-                              </a>
-                          </li>
-                          <li>
-                              <a href={creator.instagramLink}>
-                                  <FontAwesomeIcon
-                                      className="icon-size icon"
-                                      icon={socialIcons.instagramIcon}
-                                  />
-                              </a>
-                          </li>
-                      </ul>
-                  </div>
-              </div>
-          ))}
-          <p>&copy; All Rights Reserved</p>
-      </footer>
-  );
-};
+    <footer>
+        <h3 className="title">Created By:</h3>
+        {creators.map((creator) => (
+            <div key={creator.name} className="creator-container">
+                <div className="creator">
+                    <p>{creator.name}</p>
+                    <ul>
+                        <li>
+                            {/* Conditionally render icon if link has been provided */}
+                            {creator.githubLink && (
+                                <a href={creator.githubLink}>
+                                    <FontAwesomeIcon
+                                        className="icon-size icon"
+                                        icon={socialIcons.githubIcon}
+                                    />
+                                </a>
+                            )}
+                        </li>
+                        <li>
+                            {/* Conditionally render icon if link has been provided */}
+                            {creator.linkedinLink && (
+                                <a href={creator.linkedinLink}>
+                                    <FontAwesomeIcon
+                                        className="icon-size icon"
+                                        icon={socialIcons.linkedinIcon}
+                                    />
+                                </a>
+                            )}
+                        </li>
+                        <li>
+                            {/* Conditionally render icon if link has been provided */}
+                            {creator.instagramLink && (
+                                <a href={creator.instagramLink}>
+                                    <FontAwesomeIcon
+                                        className="icon-size icon"
+                                        icon={socialIcons.instagramIcon}
+                                    />
+                                </a>
+                            )}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        ))}
+        <p>&copy; All Rights Reserved</p>
+    </footer>
+);};
 
 export default Footer;
