@@ -21,3 +21,31 @@
     font-weight: bold;
 }
 
+/* This removes placeholder in input once clicked */
+input:focus::-webkit-input-placeholder,
+textarea:focus::-webkit-input-placeholder {
+    opacity: 0;
+}
+
+input:focus::-moz-placeholder,
+textarea:focus::-moz-placeholder {
+    opacity: 0;
+}
+
+input:focus::-ms-placeholder,
+textarea:focus::-ms-placeholder {
+    opacity: 0;
+}
+
+input::placeholder {
+    color: var(--grey);
+}
+
+input:focus, textarea:focus  {
+    outline: var(--green);
+    border: solid 2px var(--green);
+}
+
+textarea::placeholder {
+    color: var(--grey);
+}

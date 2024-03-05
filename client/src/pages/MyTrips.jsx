@@ -1,6 +1,5 @@
 import trips from '../dummyData.json'
 import TripList from '../components/TripList'
-import defaultPic from '../assets/defaultPic.jpeg'
 import '../style/myTrips.css'
 
 const MyTrips = () => {
@@ -11,7 +10,7 @@ const MyTrips = () => {
                 <TripList
                     key={trip.id}
                     user={trip.user}
-                    img={trip.img || defaultPic}
+                    img={trip.img }
                     where={trip.where}
                     departureDate={trip.departureDate}
                     returnDate={trip.returnDate}

@@ -23,7 +23,7 @@
 },{
     "id": 3,
     "user": "Anna Turner",
-    "img": "./public/images/img1.webp",
+    "img": "/images/img1.webp",
     "where": "Mexico City",
     "departureDate": "10/01/2024",
     "returnDate": "10/01/2024",
@@ -45,7 +45,7 @@
 },{
     "id": 5,
     "user": "Colin Bares",
-    "img": "./public/images/img1.webp",
+    "img": "/images/img1.webp",
     "where": "Mexico City",
     "departureDate": "10/01/2024",
     "returnDate": "10/01/2024",

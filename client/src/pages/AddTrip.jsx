@@ -20,7 +20,7 @@ const AddTrip = () => {
                     <div className="dateBudget-container">
                         {/* input DEPARTURE DATE */}
                     <label className="title departure-date">Departure Date:</label><br />
-                    <input type="date" className="color-change dateInput"/> <br />
+                    <input type="date" className="color-change dateInput" placeholder="Departure Date"/> <br />
                         {/* input RETURN DATE */}
                     <label className="title">Return Date:</label><br />
                     <input type="date" className="color-change dateInput"/> <br />
