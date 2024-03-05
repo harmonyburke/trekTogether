@@ -14,6 +14,7 @@ const Dashboard = () => {
             {trips.map((trip) => (
                 <TripList 
                     key={trip.id}
+                    user={trip.user}
                     img={trip.img || defaultPic}
                     where={trip.where}
                     departureDate={trip.departureDate}
