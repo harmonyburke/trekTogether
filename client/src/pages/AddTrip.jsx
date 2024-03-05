@@ -1,10 +1,11 @@
 import "../style/addTrip.css"
+import randomImg from "../utils/randomImg"
 
 const AddTrip = () => {
 
     return ( 
         <section>
-                <form action="/add-trip">
+                <form action="/add-trip" style={{ backgroundImage: `url(${randomImg()})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} className="addTrip">
                     {/* label for WHERE  */}
                     {/* input for WHERE */}
                     <label>Where To?</label> <br />
@@ -17,20 +18,17 @@ const AddTrip = () => {
                     Click here to upload an image!
                     </label> <br />
 
-                       <div className="dateBudget-container">
                          {/* input DEPARTURE DATE */}
                     <label className="title">Departure Date:</label><br />
                     <input type="date" className="color-change dateInput"/> <br />
                         {/* input RETURN DATE */}
                     <label className="title">Return Date:</label><br />
-                    <input type="date" className="color-change dateInput"/>
+                    <input type="date" className="color-change dateInput"/> <br />
                         {/* input BUDGET */}
-                    <h4>
-                        <label className="title budget-title"> Budget: </label><br />
-                        <span>$ </span><input type="number" className="color-change budgetInput" placeholder="10,000" /><span> $ </span>
-                    </h4>
-                    <label>(USD)</label> <br />
-                       </div>
+                    
+                        <label className="title budget-title"> Budget: </label> <br />
+                        $ <input type="number" className="color-change budgetInput" placeholder="10,000" /> $ <br />
+                        <label>(USD)</label> <br />
                     {/* input DESCRIPTION input */}
                     <label className="title description-title">Describe what you would like to do on this trip!!</label><br />
                     <textarea type="date" className="color-change textAreaInput" placeholder="We're Excited to hear your plan!!" /> <br />
