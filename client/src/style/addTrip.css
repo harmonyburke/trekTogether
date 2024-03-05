@@ -5,10 +5,6 @@ label {
     background-color: transparent;
 }
 
-.whereTo {
-    margin: 400px;
-}
-
 #whereInput {
  font-size: 1.5em;
  margin: 1em;
@@ -86,4 +82,18 @@ label {
     box-shadow: 2px 2px 2px var(--white);
     border: solid 2px var(--white);
     color: var(--white);
+}
+
+@media screen and (max-width: 420px) {
+    .custom-file-upload {
+        font-size: 1em;
+    }
+
+    #whereInput {
+        font-size: 1em;
+        margin: 1em;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 10px 10px 2px black;
+       }
 }

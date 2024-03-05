@@ -1,13 +1,11 @@
 import defaultPic from '../assets/defaultPic.jpeg'
-import dummyData from '../dummyData.json'
+import trips from '../dummyData.json'
 import TripList from "../components/TripList";
 import '../style/dashboard.css'
 
 
 
 const Dashboard = () => {
-
-    const trips = dummyData
 
     return ( 
         <section>
@@ -19,6 +17,7 @@ const Dashboard = () => {
                     where={trip.where}
                     departureDate={trip.departureDate}
                     returnDate={trip.returnDate}
+                    createdAt={trip.createdAt}
                 />
             ))}
         </section>

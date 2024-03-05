@@ -15,6 +15,7 @@ const MyTrips = () => {
                     where={trip.where}
                     departureDate={trip.departureDate}
                     returnDate={trip.returnDate}
+                    createdAt={trip.createdAt}
                     showDelete={true}
                 />    
             ))}
