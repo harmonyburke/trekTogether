@@ -23,7 +23,7 @@ const TripPage = () => {
                 <h4 className="title color-change">Budget:</h4>
                 <p className="color-change">{tripInfo.budget}</p>
                 <h4 className="title color-change">Posted:</h4>
-                <p className="createdAt color-change">{formatDistance(new Date("2024/01/12"), { addSuffix: true })}
+                <p className="createdAt color-change">{formatDistance(new Date(tripInfo.createdAt), { addSuffix: true })}
                 </p>
             </div>
                <button id="join-btn" className="color-change" type='submit'>✔ Join</button>
