@@ -10,6 +10,7 @@ const MyTrips = () => {
             {trips.filter((trip) => trip.joined === true).map((trip) => (
                 <TripList
                     key={trip.id}
+                    user={trip.user}
                     img={trip.img || defaultPic}
                     where={trip.where}
                     departureDate={trip.departureDate}
