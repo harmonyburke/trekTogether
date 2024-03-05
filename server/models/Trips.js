@@ -1,19 +1,14 @@
 const {Schema, model} = require ('mongoose');
 
-
 const tripSchema = new Schema ({
-    tripName: {
+    location: {
         type: String,
-        required: true
+        required: true,
     },
     budget: {
         type: Number,
         required:true,
         
-    },
-    location: {
-        type: String,
-        required: true,
     },
     details: {
         type: String,
@@ -30,7 +25,11 @@ const tripSchema = new Schema ({
     createdBy:{
         type: Schema.Types. ObjectId,
         ref:'User'
-    }
+    },
+    dateCreated:{
+        type: Date,
+        required:true
+    },
 
 });
 

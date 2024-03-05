@@ -1,0 +1,9 @@
+[
+    {
+        "location": "Colorado",
+        "budget" : "500",
+        "details": "Look at pretty mountains.",
+        "image": "server/seeds/images/colorado.jpg",
+        "dateCreated": "03/04/2024"
+    }
+]
