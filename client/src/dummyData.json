@@ -1,6 +1,6 @@
 [{
     "id": 1,
-    "img": "./assets/images/img1.webp",
+    "img": "",
     "where": "Mexico City",
     "departureDate": "10/01/2024",
     "returnDate": "10/01/2024",

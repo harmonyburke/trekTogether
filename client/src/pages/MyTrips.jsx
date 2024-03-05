@@ -1,5 +1,3 @@
-import { useState, useEffect } from 'react'
-
 import trips from '../dummyData.json'
 import TripList from '../components/TripList'
 import defaultPic from '../assets/defaultPic.jpeg'
