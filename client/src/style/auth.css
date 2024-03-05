@@ -1,0 +1,67 @@
+/* Auth */
+
+.auth-btn {
+    font-size: 1.5em;
+    padding: .5em 3em;
+    margin: 3em 0 3em 0;
+    border-radius: 100px;
+    box-shadow: 10px 10px 5px black;
+    text-align: center;
+    background-color: var(--green);
+    color: var(--grey);
+}
+
+.auth-btn:hover {
+    border: solid 2px var(--green);
+    color: var(--white);
+    box-shadow: 2.5px 2.5px 2.5px var(--white);
+}
+
+.auth-btn:active {
+    box-shadow: none;
+}
+
+.input {
+    width: 20%;
+    margin: 2.5em;
+    text-align: center;
+    padding: .5em 0;
+    background-color: var(--white);
+    font-size: 1em;
+    color: var(--grey);
+    border-radius: 10px;
+    box-shadow: 5px 5px 2.5px black
+}
+
+.input::placeholder{
+    text-align: center;
+    font-size: 1em;
+}
+
+#login-signup-btn {
+    font-size: 1.75em;
+    padding: .25em 2em;
+    border-radius: 25px;
+    box-shadow: 10px 10px 5px black;
+    background-color: var(--green);
+    color: var(--grey);
+    margin-bottom: 1em;
+}
+
+#login-signup-btn:hover {
+    box-shadow: 2.5px 2.5px 2.5px var(--white);
+    color: var(--white);
+    border: solid 2px var(--green);
+}
+
+@media screen and (max-width: 1350px) {
+    .input {
+        width: 30%;
+    }
+}
+
+@media screen and (max-width: 820px) {
+    .input {
+        width: 35%;
+    }
+}
