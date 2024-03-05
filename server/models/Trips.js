@@ -19,6 +19,9 @@ const tripSchema = new Schema ({
         required:true,
         maxLength: 500
     },
+    image:{
+        type:Stringm
+    },
     travelers: {
         type: Schema.Types.ObjectId,
         ref: 'User',
