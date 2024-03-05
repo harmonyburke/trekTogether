@@ -1,5 +1,6 @@
 const {Schema, model} = require ('mongoose');
 
+
 const tripSchema = new Schema ({
     tripName: {
         type: String,
@@ -20,15 +21,19 @@ const tripSchema = new Schema ({
         maxLength: 500
     },
     image:{
-        type:Stringm
+        type:String
     },
     travelers: {
         type: Schema.Types.ObjectId,
         ref: 'User',
     },
+    createdBy:{
+        type: Schema.Types. ObjectId,
+        ref:'User'
+    }
 
 });
 
-const Trips=mongoose.model('Trips', tripSchema);
+const Trips=model('Trips', tripSchema);
 
 module.exports= Trips;

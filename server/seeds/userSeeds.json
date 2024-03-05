@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Harmony",
+    "email": "harmonyburke@gmail.com",
+    "password": "strongpassword234"
+  },
+  {
+    "name": "Anna",
+    "email": "annaturner@gmail.com",
+    "password": "strongpassword123"
+  },
+  {
+    "name": "Curtis",
+    "email": "curtiszahniser@gmail.com",
+    "password": "strongpassword456"
+  },
+  {
+    "name": "Travis",
+    "email": "traviscelli@gmail.com",
+    "password": "strongpassword246"
+  },
+  {
+    "name": "Maddie",
+    "email": "maddieclark@gmail.com",
+    "password": "strongpassword789"
+  }
+]
