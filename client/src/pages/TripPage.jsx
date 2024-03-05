@@ -1,5 +1,5 @@
 import formatDistance from 'date-fns/formatDistanceToNow'
-import dummyData from '../dummyData.json'
+import dummyData from '../JSONdata/dummyData.json'
 import defaultPic from '../assets/defaultPic.jpeg'
 import '../style/tripPage.css'
 

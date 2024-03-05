@@ -1,4 +1,4 @@
-import trips from '../dummyData.json'
+import trips from '../JSONdata/dummyData.json'
 import TripList from '../components/TripList'
 import '../style/myTrips.css'
 

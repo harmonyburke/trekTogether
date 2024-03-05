@@ -6,12 +6,10 @@ const AddTrip = () => {
     return ( 
         <section>
                 <form action="/add-trip" style={{ backgroundImage: `url(${randomImg()})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} className="addTrip">
-                    {/* label for WHERE  */}
                     {/* input for WHERE */}
                     <input id="whereInput" className='title color-change' type="text" name="where" placeholder="Where to?" /><br />
 
                     {/* input for IMG upload */}
-                         {/* label for image */}
                     <label htmlFor="fileInput" className="title custom-file-upload color-change">
                     <input type="file" id="fileInput" hidden />
                     Click here to upload an image!
