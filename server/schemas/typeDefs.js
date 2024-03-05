@@ -1,5 +1,4 @@
 const typeDefs = `
-
 type Trip {
     _id: ID
     tripName: String!
@@ -36,7 +35,7 @@ type Mutation {
         ): Auth
         createTrip(
             tripName: String!
-            budget: Float!
+            budget: Number!
             location: String!
             details: String!
         ): Trip
