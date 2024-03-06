@@ -39,60 +39,67 @@ const TripList = (trip) => {
           </p>
           <br />
           <div className="conditional-container">
-          {trip.user === loggedInUser && (
-            <>
-              <p>Your Trip</p> <br />
-            </>
-          )}
-          {trip.user !== loggedInUser && (
-            <>
-              <p>Created By:</p>
-              <p className="title">{trip.user}</p>
-              <br />
-              <p className="createdAt">
-                {formatDistance(new Date(trip.createdAt), { addSuffix: true })}
-              </p> <br />
-            </>
-          )}
-          {/* Conditionally render Edit and Delete buttons based on showDelete */}
-          {trip.showDelete && (
-            <>
-              {/* Conditionally render Edit button based on createdBy and loggedIn user */}
-              {trip.user === loggedInUser && (
-                <a href={editHref}>
-                  <button
-                    id="edit"
-                    className="dashboard-view myTrips-view material-symbols-outlined"
-                  >
-                    Edit
-                  </button>
-                </a>
-              )}
-              {trip.user === loggedInUser && (
-                <>
-                  <a href="/delete">
-                    <button
-                      id="delete"
-                      className="dashboard-view myTrips-view material-symbols-outlined"
-                      onClick={handleDelete}
-                    >
-                      Delete
-                    </button>
-                  </a>
-                </>
-              )}
-              <button type="submit" id="rft-btn" onClick={handleRemove}>
-                Remove
-              </button>
-              <br />
-            </>
-          )}
-
+            {trip.showDelete ? (
+              <>
+                {trip.user === loggedInUser && (
+                  <>
+                    <p>Your Trip</p>
+                    <br />
+                  </>
+                )}
+                {trip.user !== loggedInUser && (
+                  <>
+                    <p>Created By:</p>
+                    <p className="title">{trip.user}</p>
+                    <br />
+                    <p className="createdAt">
+                      {formatDistance(new Date(trip.createdAt), { addSuffix: true })}
+                    </p>
+                    <br />
+                  </>
+                )}
+                {/* Conditionally render Edit and Delete buttons based on showDelete */}
+                {trip.user === loggedInUser && (
+                  <>
+                    <a href={editHref}>
+                      <button
+                        id="edit"
+                        className="dashboard-view myTrips-view material-symbols-outlined"
+                      >
+                        Edit
+                      </button>
+                    </a>
+                    <a href="/delete">
+                      <button
+                        id="delete"
+                        className="dashboard-view myTrips-view material-symbols-outlined"
+                        onClick={handleDelete}
+                      >
+                        Delete
+                      </button>
+                    </a>
+                  </>
+                )}
+                <button type="submit" id="rft-btn" onClick={handleRemove}>
+                  Remove
+                </button>
+                <br />
+              </>
+            ) : (
+              <>
+                <p>Created By:</p>
+                <p className="title">{trip.user}</p>
+                <br />
+                <p className="createdAt">
+                  {formatDistance(new Date(trip.createdAt), { addSuffix: true })}
+                </p>
+                <br />
+              </>
+            )}
           </div>
         </div>
       </a>
     </section>
-  );
-};
+  );};
 
 export default TripList;
