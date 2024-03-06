@@ -5,8 +5,8 @@ import defaultPic from '../assets/defaultPic.jpeg'
 import "../style-components/tripList.css"
 
 const TripList = ( trip ) => {
-    
     const loggedInUser = "Anna Turner";
+    const editHref = `/edit/${trip.id}`
 
     return ( 
         <section className="tripIdea-container">
@@ -27,9 +27,9 @@ const TripList = ( trip ) => {
                         <>
                             {/* Conditionally render Edit button based on createdBy and loggedIn user */}
                             {trip.user === loggedInUser && (
-                                <button id="edit" className='dashboard-view myTrips-view material-symbols-outlined'>Edit</button>
+                                <a href={editHref}><button id="edit" className='dashboard-view myTrips-view material-symbols-outlined'>Edit</button></a>
                             )}
-                            <button id="delete" className='dashboard-view myTrips-view material-symbols-outlined'>Delete</button>
+                            <a href="/delete"><button id="delete" className='dashboard-view myTrips-view material-symbols-outlined'>Delete</button></a>
                         </>
                     )}
                 </div>
