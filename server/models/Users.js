@@ -17,7 +17,7 @@ const userSchema = new Schema ({
         required: true,
         minlength: 7
     },
-    trips: [Trips.schema]
+    trips: [Trips]
 
 });
 
