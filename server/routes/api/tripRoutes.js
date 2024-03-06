@@ -1,22 +1,17 @@
-const router = require('express').Router();
+const router = require("express").Router();
 const {
-  createUser,
-  getSingleUser,
-  saveBook,
-  deleteBook,
-  login,
-} = require('../../controllers/user-controller');
+  getAllTrips,
+  getSingleTrip,
+  createTrip,
+  deleteTrip,
+  editTrip,
+} = require("../../controllers/tripControllers");
 
-// import middleware
-const { authMiddleware } = require('../../utils/auth');
 
-// put authMiddleware anywhere we need to send a token for verification of user
-router.route('/').post(createUser).put(authMiddleware, saveBook);
+router.route("/").post(createTrip);
 
-router.route('/login').post(login);
+router.route("/trippage").get(getAllTrips);
 
-router.route('/me').get(authMiddleware, getSingleUser);
-
-router.route('/books/:bookId').delete(authMiddleware, deleteBook);
+router.route('/trippage/:id').get(getSingleTrip).put(editTrip).delete(deleteTrip);
 
 module.exports = router;

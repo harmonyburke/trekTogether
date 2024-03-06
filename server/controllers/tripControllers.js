@@ -2,6 +2,16 @@ const { Trips, User } = require('../models');
 // import sign token function from auth
 const { signToken } = require('../utils/auth');
 
+
+// controller functions needed-
+// getAllTrips
+// getSingleTrip
+// createTrip
+// deleteTrip
+// editTrip
+
+// adding and deleting from user end is in user controllers
+
 module.exports = {
   // get a single trip by either its id or tripName
   async getSingleTrip({ trip = null, params }, res) {
