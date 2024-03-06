@@ -1,6 +1,7 @@
 const {Schema, model} = require ('mongoose');
 
 const tripSchema = new Schema ({
+    
     location: {
         type: String,
         required: true,
