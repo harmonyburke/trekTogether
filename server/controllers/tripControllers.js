@@ -1,35 +1,35 @@
-const { Trip } = require('../models');
+const { Trips } = require('../models');
 // import sign token function from auth
 const { signToken } = require('../utils/auth');
 
 module.exports = {
-  // get a single user by either their id or their username
+  // get a single trip by either its id or tripName
   async getSingleTrip({ trip = null, params }, res) {
-    const foundUser = await User.findOne({
-      $or: [{ _id: user ? user._id : params.id }, { username: params.username }],
+    const foundTrip = await Trips.findOne({
+      $or: [{ _id: trip ? trip._id : params.id }, { tripName: params.tripName }],
     });
 
-    if (!foundUser) {
-      return res.status(400).json({ message: 'Cannot find a user with this id!' });
+    if (!foundTrip) {
+      return res.status(400).json({ message: 'Cannot find a trip with this id!' });
     }
 
-    res.json(foundUser);
+    res.json(foundTrip);
   },
-  // create a user, sign a token, and send it back (to client/src/components/SignUpForm.js)
-  async createUser({ body }, res) {
-    const user = await User.create(body);
+  // create a trip, sign a token, and send it back (to client/src/components/SignUpForm.js)
+  async createTrip({ body }, res) {
+    const trip = await Trips.create(body);
 
-    if (!user) {
+    if (!trip) {
       return res.status(400).json({ message: 'Something is wrong!' });
     }
-    const token = signToken(user);
-    res.json({ token, user });
+    const token = signToken(trip);
+    res.json({ token, trip });
   },
-  // login a user, sign a token, and send it back (to client/src/components/LoginForm.js)
+  // login a trip, sign a token, and send it back (to client/src/components/LoginForm.js)
   // {body} is destructured req.body
   async login({ body }, res) {
-    const user = await User.findOne({ $or: [{ username: body.username }, { email: body.email }] });
-    if (!user) {
+    const user = await User.findOne({ $or: [{ name: body.name }, { email: body.email }] });
+    if (!trip) {
       return res.status(400).json({ message: "Can't find this user" });
     }
 
@@ -46,12 +46,12 @@ module.exports = {
   async saveBook({ user, body }, res) {
     console.log(user);
     try {
-      const updatedUser = await User.findOneAndUpdate(
+      const updatedTrips = await Trips.findOneAndUpdate(
         { _id: user._id },
         { $addToSet: { savedBooks: body } },
         { new: true, runValidators: true }
       );
-      return res.json(updatedUser);
+      return res.json(updatedTrips);
     } catch (err) {
       console.log(err);
       return res.status(400).json(err);
@@ -59,14 +59,14 @@ module.exports = {
   },
   // remove a book from `savedBooks`
   async deleteBook({ user, params }, res) {
-    const updatedUser = await User.findOneAndUpdate(
+    const updatedTrips = await Trips.findOneAndUpdate(
       { _id: user._id },
       { $pull: { savedBooks: { bookId: params.bookId } } },
       { new: true }
     );
-    if (!updatedUser) {
+    if (!updatedTrips) {
       return res.status(404).json({ message: "Couldn't find user with this id!" });
     }
-    return res.json(updatedUser);
+    return res.json(updatedTrips);
   },
 };
