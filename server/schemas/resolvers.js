@@ -1,5 +1,5 @@
 // import from models directory
-const { User, Trip } = require('../models');
+const { User, Trips } = require('../models');
 // will import from auth.js when logic is added
 const { signToken, AuthenticationError } = require('../utils/auth');
 
@@ -7,8 +7,8 @@ const { signToken, AuthenticationError } = require('../utils/auth');
 const resolvers = {
     Query: {
        users: async () => User.find(),
-       trips: async () => Trip.find(),
-       trip: async (parent, { _id }) => Trip.findById(_id),
+       trips: async () => Trips.find(),
+       trip: async (parent, { _id }) => Trips.findById(_id),
     },
     
     Mutation: {
@@ -20,12 +20,12 @@ const resolvers = {
         },
         // function to create a new trip
         createTrip: async (parent, { tripName, budget, location, details }) => {
-            const trip = await Trip.create({ tripName, budget, location, details });
+            const trip = await Trips.create({ tripName, budget, location, details });
             return trip;
         },
         // function to join a trip that has already been created
         joinTrip: async (parent, { tripId, userId }) => {
-            const trip = await Trip.findById(tripId);
+            const trip = await Trips.findById(tripId);
             const user = await User.findById(userId);
 
             if (!trip || !user) {
@@ -40,7 +40,7 @@ const resolvers = {
         // function to update the trip details
         // added to update travelers as well
         updateTrip: async (parent, { _id, tripName, budget, location, details, travelerIds }) => {
-            const trip = await Trip.findByIdAndUpdate(
+            const trip = await Trips.findByIdAndUpdate(
                 _id,
                 { tripName, budget, location, details },
                 { new: true }
