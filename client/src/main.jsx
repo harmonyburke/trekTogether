@@ -2,7 +2,7 @@
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-// import app component
+// import style
 import App from './App.jsx'
 
 // import pages file
@@ -13,9 +13,7 @@ import Auth from './pages/Auth.jsx';
 import Login from './components/Login.jsx';
 import Signup from './components/SignUp.jsx';
 import MyTrips from './pages/MyTrips.jsx';
-
-
-// import components
+import Edit from './pages/Edit.jsx';
 
 const router = createBrowserRouter([
   {
@@ -49,7 +47,11 @@ const router = createBrowserRouter([
       {
         path: 'mytrips',
         element: <MyTrips />
-      }
+      },
+      {
+        path: 'edit/:id',
+        element: <Edit />
+      },
     ]
   },
 ]);

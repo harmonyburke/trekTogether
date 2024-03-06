@@ -71,7 +71,7 @@ label {
 .addTrip-submit {
     margin: 1em 0 1em 0;
     font-size: 2em;
-    padding: .5em 2em;
+    padding: .25em 2em;
     border-radius: 50px;
     color: var(--grey);
     background-color: var(--green);
