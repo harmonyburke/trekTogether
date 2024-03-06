@@ -56,7 +56,7 @@ const Footer = () => {
                 </div>
             </div>
         ))}
-        <p>&copy; All Rights Reserved</p>
+        <p>&copy;2024 All Rights Reserved</p>
     </footer>
 );};
 

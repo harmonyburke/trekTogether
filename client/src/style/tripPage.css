@@ -52,7 +52,7 @@ section img {
 
 
 .tripInfo-card-context {
-    line-height: 4.5em;
+    line-height: 4em;
 }
 
 .tripInfo-card-context h4 {
@@ -61,6 +61,10 @@ section img {
 
 .tripInfo-card-context p {
     font-size: 1.25em;
+}
+
+.travelers {
+    line-height: normal;
 }
 
 #join-btn {
