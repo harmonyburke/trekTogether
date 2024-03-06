@@ -22,6 +22,8 @@ const TripPage = () => {
                 <p className='color-change'>{tripInfo.departureDate} - {tripInfo.returnDate}</p>
                 <h4 className="title color-change">Budget:</h4>
                 <p className="color-change">{tripInfo.budget}</p>
+                <h4 className="title color-change">Attending:</h4>
+                <p className="color-change">{tripInfo.travelers}<br /></p>
                 <h4 className="title color-change">Posted:</h4>
                 <p className="createdAt color-change">{formatDistance(new Date(tripInfo.createdAt), { addSuffix: true })}
                 </p>
