@@ -1,5 +1,5 @@
 const {Schema, model} = require ('mongoose');
-const Trips= require ('./Trips');
+// const Trips = require('./Trips');
 
 const userSchema = new Schema ({
     name: {
@@ -17,7 +17,7 @@ const userSchema = new Schema ({
         required: true,
         minlength: 7
     },
-    trips: [Trips]
+    // trips: [Trips]
 
 });
 

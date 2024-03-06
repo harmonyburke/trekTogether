@@ -1,39 +1,45 @@
-const {Schema, model} = require ('mongoose');
+const { Schema, model } = require('mongoose');
 
-const tripSchema = new Schema ({
-    
-    location: {
-        type: String,
-        required: true,
-    },
-    budget: {
-        type: Number,
-        required:true,
-        
-    },
-    details: {
-        type: String,
-        required:true,
-        maxLength: 500
-    },
-    image:{
-        type:String
-    },
-    travelers: {
-        type: Schema.Types.ObjectId,
-        ref: 'User',
-    },
-    createdBy:{
-        type: Schema.Types. ObjectId,
-        ref:'User'
-    },
-    dateCreated:{
-        type: Date,
-        required:true
-    },
+const tripSchema = new Schema(
+    {
+        where: {
+            type: String,
+            required: true,
+        },
+        budget: {
+            type: Number,
+            required: true,
+        },
+        description: {
+            type: String,
+            required: true,
+            maxLength: 500
+        },
+        img: {
+            type: String
+        },
+        createdAt: {
+            type: Date,
+            default: Date.now
+        },
+        userId: {
+            type: Number,
+            required: true
+        },
+        departureDate: {
+            type: Date,
+            required: true
+        },
+        returnDate: {
+            type: Date,
+            required: true
+        },
+        joined: {
+            type: Boolean,
+            default: false
+        }
+    });
 
-});
+const Trips = model("Trips", tripSchema);
 
-const Trips=model('Trips', tripSchema);
-
-module.exports= Trips;
+module.exports = Trips;
