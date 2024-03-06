@@ -25,11 +25,17 @@ const TripList = ( trip ) => {
                     {/* Conditionally render Edit and Delete buttons based on showDelete */}
                     {trip.showDelete && (
                         <>
-                            {/* Conditionally render Edit button based on createdBy and loggedIn user */}
-                            {trip.user === loggedInUser && (
-                                <a href={editHref}><button id="edit" className='dashboard-view myTrips-view material-symbols-outlined'>Edit</button></a>
-                            )}
+                        
+                        {/* Conditionally render Edit button based on createdBy and loggedIn user */}
+                        {trip.user === loggedInUser && (
+                        <a href={editHref}><button id="edit" className='dashboard-view myTrips-view material-symbols-outlined'>Edit</button></a>
+                        )}
+                        {trip.user === loggedInUser && (
+                            <>
                             <a href="/delete"><button id="delete" className='dashboard-view myTrips-view material-symbols-outlined'>Delete</button></a>
+                            </>
+                        )}
+                        <button type='submit' id='rft-btn'>Remove</button> <br />
                         </>
                     )}
                 </div>
