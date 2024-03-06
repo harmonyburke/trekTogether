@@ -2,8 +2,37 @@
     {
         "location": "Colorado",
         "budget" : "500",
-        "details": "Look at pretty mountains.",
+        "description": "Look at pretty mountains.",
         "image": "server/seeds/images/colorado.jpg",
-        "dateCreated": "03/04/2024"
-    }
+        "departureDate": "03/04/2024",
+        "returnDate": "04/01/2024",
+
+    },
+    {
+        "location": "Colorado",
+        "budget" : "500",
+        "description": "Look at pretty mountains.",
+        "image": "server/seeds/images/colorado.jpg",
+        "departureDate": "03/04/2024",
+        "returnDate": "04/01/2024",
+
+    },
+    {
+        "location": "Colorado",
+        "budget" : "500",
+        "description": "Look at pretty mountains.",
+        "image": "server/seeds/images/colorado.jpg",
+        "departureDate": "03/04/2024",
+        "returnDate": "04/01/2024",
+
+    },
+    {
+        "location": "Colorado",
+        "budget" : "500",
+        "description": "Look at pretty mountains.",
+        "image": "server/seeds/images/colorado.jpg",
+        "departureDate": "03/04/2024",
+        "returnDate": "04/01/2024",
+
+    },
 ]
