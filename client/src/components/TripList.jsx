@@ -5,9 +5,11 @@ import defaultPic from '../assets/defaultPic.jpeg'
 import "../style-components/tripList.css"
 
 const TripList = ( trip ) => {
+    const loggedInUser = "Anna Turner";
+    const editHref = `/edit/${trip.id}`
 
-return ( 
-       <section className="tripIdea-container">
+    return ( 
+        <section className="tripIdea-container">
             <a className='center' href="/trippage">
                 <div className="cardHeader">
                     <img src={trip.img || defaultPic}/>
@@ -19,13 +21,21 @@ return (
                     <p>Created By:</p>
                     <p className='title'>{trip.user}</p><br />
                     <p className="createdAt">{formatDistance(new Date(trip.createdAt), { addSuffix: true })}</p>
+                    
+                    {/* Conditionally render Edit and Delete buttons based on showDelete */}
                     {trip.showDelete && (
-                    <><button id="edit" className='dashboard-view myTrips-view material-symbols-outlined'>Edit</button><button id="delete" className='dashboard-view myTrips-view material-symbols-outlined'>delete</button></>
+                        <>
+                            {/* Conditionally render Edit button based on createdBy and loggedIn user */}
+                            {trip.user === loggedInUser && (
+                                <a href={editHref}><button id="edit" className='dashboard-view myTrips-view material-symbols-outlined'>Edit</button></a>
+                            )}
+                            <a href="/delete"><button id="delete" className='dashboard-view myTrips-view material-symbols-outlined'>Delete</button></a>
+                        </>
                     )}
                 </div>
             </a>
-       </section>
-     );
+        </section>
+    );
 }
  
 export default TripList;

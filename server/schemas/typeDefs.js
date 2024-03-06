@@ -28,7 +28,9 @@ type Auth {
 type Query {
     users: [User]
     trips: [Trip]
-    trip(_id: ID!): Trip
+    trip(
+        _id: ID!
+        ): Trip
 }
 
 type Mutation {

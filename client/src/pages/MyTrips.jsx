@@ -1,6 +1,5 @@
-import trips from '../dummyData.json'
+import trips from '../JSONdata/dummyData.json'
 import TripList from '../components/TripList'
-import defaultPic from '../assets/defaultPic.jpeg'
 import '../style/myTrips.css'
 
 const MyTrips = () => {
@@ -10,8 +9,9 @@ const MyTrips = () => {
             {trips.filter((trip) => trip.joined === true).map((trip) => (
                 <TripList
                     key={trip.id}
+                    id={trip.id}
                     user={trip.user}
-                    img={trip.img || defaultPic}
+                    img={trip.img }
                     where={trip.where}
                     departureDate={trip.departureDate}
                     returnDate={trip.returnDate}
