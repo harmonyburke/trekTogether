@@ -59,6 +59,16 @@ const resolvers = {
             // returns the trip with new travelers and details
             return trip;
         },
+
+        // function to delete trip 
+        deleteTrip: async (parent, { tripId }) => {
+            const deletedTrip = await Trips.findByIdAndDelete(tripId);
+            if (!deletedTrip) {
+                throw new Error('Trip not found!');
+            }
+            return tripId;
+        },
+
         // function handles user login 
         login: async (parent, { email, password }) => {
             const user = await User.findOne({ email });
