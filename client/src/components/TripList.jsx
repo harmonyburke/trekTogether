@@ -1,5 +1,6 @@
 import formatDistance from "date-fns/formatDistanceToNow";
 import defaultPic from "../assets/defaultPic.jpeg";
+// import formatDate from "../utils/helpers";
 
 // import css
 import "../style-components/tripList.css";
@@ -7,6 +8,24 @@ import "../style-components/tripList.css";
 const TripList = (trip) => {
   const loggedInUser = "Anna Turner";
   const editHref = `/edit/${trip.id}`;
+
+
+
+
+  // const handleExpire = () => {
+
+  const d = new Date()
+  const formatDate = `${d.getFullYear()}/${d.getMonth() + 1}/${d.getDate()}`
+  console.log(formatDate)
+
+  const currentDate = formatDate;
+  const expiryDate = trip.departureDate
+   
+
+  if (currentDate > expiryDate) {
+    console.log("expired");
+  }
+  // }
 
   const handleDelete = (e) => {
     e.preventDefault();
