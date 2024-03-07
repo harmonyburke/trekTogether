@@ -7,7 +7,7 @@ const EditTripComponent = ( trip  ) => {
 
     if (trip.showData) {
         // date must be passed yyyy-mm-dd but data is set mm/dd/yyyy
-         const splitDepartureDate = trip.departureDate.split("/").reverse()
+        const splitDepartureDate = trip.departureDate.split("/").reverse()
         const formatDepartureDate = [splitDepartureDate[0], splitDepartureDate[2], splitDepartureDate[1]].join("-")
         
         // date must be passed yyyy-mm-dd but data is set mm/dd/yyyy 

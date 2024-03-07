@@ -8,12 +8,12 @@
 
 
 * {
-    background-color: var(--grey);
-    color: var(--white);
     font-family: "Quattrocento", serif;
     margin: 0;
     padding: 0;
     border: 0;
+    background-color: var(--grey);
+    color: var(--white);
 }
 
 .title {
@@ -42,8 +42,8 @@ input::placeholder {
 }
 
 input:focus, textarea:focus  {
-    outline: var(--green);
     border: solid 2px var(--green);
+    outline: var(--green);
 }
 
 textarea::placeholder {

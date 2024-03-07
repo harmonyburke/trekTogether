@@ -9,23 +9,20 @@ const TripList = (trip) => {
   const loggedInUser = "Anna Turner";
   const editHref = `/edit/${trip.id}`;
 
+  const d = new Date();
+  const formattedDate = `${(d.getMonth() + 1).toString().padStart(2, '0')}/${d.getDate().toString().padStart(2, '0')}/${d.getFullYear()}`;
+  console.log(formattedDate);
+  console.log(trip.departureDate);
+  
+  const currentDate = new Date(); // Use a new Date object for current date
+  const tripDepartureDateParts = trip.departureDate.split("/");
+  const formattedTripDepartureDate = new Date(tripDepartureDateParts[2], tripDepartureDateParts[0] - 1, tripDepartureDateParts[1]);
+  
+  if (currentDate > formattedTripDepartureDate) {
+      console.log("Expired");
+    return
+  } 
 
-
-
-  // const handleExpire = () => {
-
-  const d = new Date()
-  const formatDate = `${d.getFullYear()}/${d.getMonth() + 1}/${d.getDate()}`
-  console.log(formatDate)
-
-  const currentDate = formatDate;
-  const expiryDate = trip.departureDate
-   
-
-  if (currentDate > expiryDate) {
-    console.log("expired");
-  }
-  // }
 
   const handleDelete = (e) => {
     e.preventDefault();
@@ -45,6 +42,7 @@ const TripList = (trip) => {
   };
 
   return (
+    
     <section className="tripIdea-container">
       <a className="center" href="/trippage">
         <div className="cardHeader">

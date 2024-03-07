@@ -1,6 +1,5 @@
 import trips from '../JSONdata/dummyData.json'
 import TripList from "../components/TripList";
-import '../style/dashboard.css'
 
 const Dashboard = () => {
 
