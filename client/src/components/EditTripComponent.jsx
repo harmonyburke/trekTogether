@@ -28,8 +28,8 @@ const EditTripComponent = ( trip  ) => {
             <input id="whereInput" className='title color-change' type="text" 
             name="where" 
             placeholder="Where to?" 
-            value={where} 
-            onChange={(e) => setWhere( e.target.value )}
+            defaultValue={where} 
+            // onChange={(e) => setWhere( e.target.value )}
             />
             <br />
 
@@ -45,15 +45,13 @@ const EditTripComponent = ( trip  ) => {
 
                 {/* input DEPARTURE DATE */}
                 <input type="date" className="color-change dateInput" 
-                value={Ddate}
-                onChange={(e) => setDdate( e.target.value )}
+                defaultValue={Ddate}
                 /><br />
 
                 <label className="title">Return Date:</label><br />
                 {/* input RETURN Date */}
                 <input type="date" className="color-change dateInput" 
-                value={Rdate}
-                onChange={(e) => setRdate( e.target.value )}
+                defaultValue={Rdate}
                 /><br />
                 
                 <label className="title budget-title"> Budget: </label> <br />
@@ -61,8 +59,7 @@ const EditTripComponent = ( trip  ) => {
                 {trip.showData && (<>
                     <span>$ </span><input type="number" className="color-change budgetInput" 
                     placeholder="10,000"
-                    value={budget}
-                    onChange={(e) => setBudget( e.target.value )}
+                    defaultValue={budget}
                     /><span> $</span> <br />
                 <label>(USD)</label><br /></>)}
             </div>
@@ -70,8 +67,7 @@ const EditTripComponent = ( trip  ) => {
             <label className="title description-title">Describe what you would like to do on this trip!!</label><br />
                 <textarea type="date" className="color-change textAreaInput" 
                 placeholder="We're Excited to hear your plan!!"
-                value={description}
-                onChange={(e) => setDescription( e.target.value )}
+                defaultValue={description}
                 /> <br />
                 <button type="submit" className="addTrip-submit ">Edit Trip</button>
             </form>
