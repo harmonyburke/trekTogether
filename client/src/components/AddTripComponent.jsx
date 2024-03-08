@@ -27,7 +27,7 @@ const AddTripComponent = () => {
             // successful
             console.log('Trip created!', data.createTrip);
     } catch (err) {
-        console.error('Error creating trip!, err');
+        console.error('Error creating trip!', err);
     };
 
     return (             

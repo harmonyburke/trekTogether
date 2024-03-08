@@ -2,11 +2,12 @@
 import randomImg from "../utils/randomImg";
 import { useState } from 'react';
 import AddTripComponent from "./AddTripComponent";
+import { useMutation } from "apollo/client";
+import { UPDATE_TRIP } from "../utils/mutations";
 
 
-const CreateTrip = ( trip ) => {
-
-const EditTripComponent = ( trip  ) => {
+const EditTripComponent = ({ trip }) => {
+    const [updateTrip] = useMutation(UPDATE_TRIP);
 
     if (trip.showData) {
         // date must be passed yyyy-mm-dd but data is set mm/dd/yyyy
@@ -16,12 +17,33 @@ const EditTripComponent = ( trip  ) => {
         // date must be passed yyyy-mm-dd but data is set mm/dd/yyyy 
         const splitReturnDate = trip.returnDate.split("/").reverse()
         const formateReturnDate = [splitReturnDate[0], splitReturnDate[2], splitReturnDate[1]].join("-")
-        
+    
         const [ where, setWhere ] = useState(trip.where)
         const [ Ddate, setDdate] = useState(formatDepartureDate)
         const [ Rdate, setRdate] = useState(formateReturnDate)
         const [ budget, setBudget ] = useState(trip.budget)
         const [ description, setDescription ] = useState(trip.description)
+
+        const handleSubmit = async (e) => {
+            e.preventDefault();
+            try {
+                await updateTrip({
+                    variables: {
+                        _id: trip._id,
+                        tripInput: {
+                            where,
+                            departureDate,
+                            returnDate,
+                            budget,
+                            description
+                        }
+                    }
+                })
+                console.log('Trip updated!', data.updateTrip);
+            } catch (error) {
+                console.error()
+            }
+        }
 
     return (
         <section>
