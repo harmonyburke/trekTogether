@@ -3,6 +3,9 @@ import randomImg from "../utils/randomImg";
 import { useState } from 'react';
 import AddTripComponent from "./AddTripComponent";
 
+
+const CreateTrip = ( trip ) => {
+
 const EditTripComponent = ( trip  ) => {
 
     if (trip.showData) {
