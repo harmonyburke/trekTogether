@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import randomImg from "../utils/randomImg";
 
 const AddTripComponent = () => {
