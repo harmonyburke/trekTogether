@@ -1,11 +1,15 @@
 const typeDefs = `
 type Trip {
     _id: ID
-    tripName: String!
-    budget: Float!
-    location: String!
-    details: String!
-    travelers: [User]
+    budget: Int
+    where: String!
+    description: String
+    user: String!
+    img: String
+    departureDate: String!
+    returnDate: String!
+    createdAt: String!
+    joined: Boolean
 }
 
 type User {
@@ -35,35 +39,28 @@ type Mutation {
         email: String!
         password: String!
     ): Auth
-
+    
     createTrip(
-        tripName: String!
-        budget: Float!
-        location: String!
-         details: String!
+        budget: Int!
+        where: String!
+        description: String!
+        user: ID!
+        img: String
+        departureDate: String!
+        returnDate: String!
+        joined: Boolean!
     ): Trip
 
-    joinTrip(
-        tripId: ID!
-        userId: ID!
-    ): Trip
+    joinTrip(tripId: ID!, userId: ID!): Trip
 
     updateTrip(
-         _id: ID!
-        tripName: String
-         budget: Float
-        location: String
-        details: String
+            _id: ID!
+            tripName: String
+            budget: Float
+            location: String
+            details: String
     ): Trip
-
-    deleteTrip(
-        tripId: ID!
-    ): ID
-
-     login(
-        email: String!
-        password: String!
-    ): Auth
+        login(email: String!, password: String!): Auth
 }
 `
 

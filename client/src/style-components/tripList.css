@@ -1,8 +1,5 @@
 /* tripList */
 
-section {
-    text-align: center;}
-
 .tripIdea-container {
     border: solid 1rem;
     border-radius: 20px;
@@ -27,17 +24,17 @@ img {
 }
 
 .tripIdea-container:hover {
-    background-color: var(--green);
-    border: solid 1px var(--green);
     padding: 1em;
     box-shadow: 5px 5px 2.5px black;
+    border: solid 1px var(--green);
+    background-color: var(--green);
 }
 
 .title-green {
-    color: var(--green);
     margin-bottom: .25em;
     padding-bottom: .25em;
     border-bottom: solid 1px var(--green);
+    color: var(--green);
 }
 
 .date {
@@ -45,22 +42,40 @@ img {
 }
 
 .myTrips-view {
-    margin: 1em;
+    margin: .5em ;
+    width: 35%;
+}
+
+.conditional-container {
+   height: 150px;
+}
+
+#rft-btn {
+    padding: .5em 1em;
+    border-radius: 10px;
+    box-shadow: 5px 5px 2px black;
+    border: solid 1px var(--white);
+}
+
+#rft-btn:hover {
+    cursor: pointer;
+    box-shadow: 2px 2px 2px black;
+    background-color: red;
 }
 
 #edit, #delete {
     border: solid 1px;
     border-radius: 10px;
-    box-shadow: 5px 5px 2.5px black;
     padding: .1em;
+    box-shadow: 5px 5px 2.5px black;
 }
 
 #edit:hover, #delete:hover {
-    background-color: var(--green);
-    border: solid 1px var(--white);
     padding: .1em;
     border-radius: 10px;
     box-shadow: 2px 2px 2px black;
+    background-color: var(--green);
+    border: solid 1px var(--white);
 }
 
 #edit:hover {
@@ -69,8 +84,8 @@ img {
 }
 
 #delete:hover {
-    background-color: red;
     border: solid 1px var(--white);
+    background-color: red;
 }
 
 /* anti-squish cards */

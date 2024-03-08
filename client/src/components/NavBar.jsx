@@ -3,7 +3,7 @@ import "../style-components/navBar.css"
 
 const NavBar = () => {
 
-    const isLoggedIn = false
+    const isLoggedIn = true
 
     const navLinks = [
         {
@@ -11,11 +11,11 @@ const NavBar = () => {
             name: "Dashboard",
         },
         {
-            link: "/mytrips",
+            link: isLoggedIn ? "/mytrips" : "/auth",
             name: "My Trips",
         },
         {
-            link: "/addtrip",
+            link: isLoggedIn ? "/addtrip" : "/auth",
             name: "Add Trip",
         },
         {

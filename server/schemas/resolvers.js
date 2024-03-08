@@ -1,9 +1,9 @@
 // import from models directory
 const { User, Trips } = require('../models');
 // will import from auth.js when logic is added
-const { signToken, AuthenticationError } = require('../utils/auth');
+const { signToken, AuthenticationError } = require("../utils/auth");
 
-// queries and mutations for GraphQL schema to retrieve users, trips, and specific trips by their IDs
+// queries and mutations to retrieve users, trips, and specific trips by their IDs
 const resolvers = {
     Query: {
        users: async () => User.find(),
@@ -19,8 +19,9 @@ const resolvers = {
             return { token, user };
         },
         // function to create a new trip
-        createTrip: async (parent, { tripName, budget, location, details }) => {
-            const trip = await Trips.create({ tripName, budget, location, details });
+        createTrip: async (parent, args) => {
+            const trip = await Trips.create({ ...args, 
+            userId: args.user });
             return trip;
         },
         // function to join a trip that has already been created
@@ -46,43 +47,35 @@ const resolvers = {
                 { new: true }
             );
 
-            if (!trip) {
-                throw new Error('Trip not found!');
-            }
-            // logic to update the string of travelers on the trip
-            if (travelerIds && travelerIds.length > 0) {
-                //  $in- query operator used to specify an array of values (travelers from users) to match in query condition (reference: MongoDB aggregations)
-                const users = await User.find({ _id: { $in: travelerIds } });
-                trip.travelers.push(...users);
-                await trip.save();
-            }
-            // returns the trip with new travelers and details
-            return trip;
-        },
-
-        // function to delete trip 
-        deleteTrip: async (parent, { tripId }) => {
-            const deletedTrip = await Trips.findByIdAndDelete(tripId);
-            if (!deletedTrip) {
-                throw new Error('Trip not found!');
-            }
-            return tripId;
-        },
-
-        // function handles user login 
-        login: async (parent, { email, password }) => {
-            const user = await User.findOne({ email });
-            if (!user) {
-                throw new AuthenticationError('User not found!');
-            }
-            const correctPw = await user.isCorrectPassword(password);
-            if (!correctPw) {
-                throw new AuthenticationError('Incorrect password!');
-            }
-            const token = signToken(user);
-            return { token, user };
-        },
+      if (!trip) {
+        throw new Error("Trip not found!");
+      }
+      return trip;
     },
+
+    // function to delete trip
+    deleteTrip: async (parent, { tripId }) => {
+      const deletedTrip = await Trips.findByIdAndDelete(tripId);
+      if (!deletedTrip) {
+        throw new Error("Trip not found!");
+      }
+      return tripId;
+    },
+  },
+
+  // function handles user login
+  login: async (parent, { email, password }) => {
+    const user = await User.findOne({ email });
+    if (!user) {
+      throw new AuthenticationError("User not found!");
+    }
+    const correctPw = await user.isCorrectPassword(password);
+    if (!correctPw) {
+      throw new AuthenticationError("Incorrect password!");
+    }
+    const token = signToken(user);
+    return { token, user };
+  },
 };
 
 module.exports = resolvers;

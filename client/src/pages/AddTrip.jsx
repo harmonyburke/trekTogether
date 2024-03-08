@@ -1,13 +1,9 @@
-import CreateTrip from "../components/createTrip";
+import CreateTrip from "../components/EditTripComponent";
 
-import "../style/addTrip.css"
-
+import "../style/addTrip.css";
 
 const AddTrip = () => {
+  return <CreateTrip />;
+};
 
-    return ( 
-        <CreateTrip />
-     );
-}
- 
 export default AddTrip;
