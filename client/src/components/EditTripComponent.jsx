@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react-hooks/rules-of-hooks */
 import randomImg from "../utils/randomImg";
 import { useState } from 'react';
@@ -8,6 +9,7 @@ import { UPDATE_TRIP } from "../utils/mutations";
 
 const EditTripComponent = ({ trip }) => {
     const [updateTrip] = useMutation(UPDATE_TRIP);
+
 
     if (trip.showData) {
         // date must be passed yyyy-mm-dd but data is set mm/dd/yyyy
