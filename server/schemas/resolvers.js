@@ -61,21 +61,21 @@ const resolvers = {
       }
       return tripId;
     },
+    login: async (parent, { email, password }) => {
+      const user = await User.findOne({ email });
+      if (!user) {
+        throw new AuthenticationError("User not found!");
+      }
+      const correctPw = await user.isCorrectPassword(password);
+      if (!correctPw) {
+        throw new AuthenticationError("Incorrect password!");
+      }
+      const token = signToken(user);
+      return { token, user };
+    },
   },
 
   // function handles user login
-  login: async (parent, { email, password }) => {
-    const user = await User.findOne({ email });
-    if (!user) {
-      throw new AuthenticationError("User not found!");
-    }
-    const correctPw = await user.isCorrectPassword(password);
-    if (!correctPw) {
-      throw new AuthenticationError("Incorrect password!");
-    }
-    const token = signToken(user);
-    return { token, user };
-  },
 };
 
 module.exports = resolvers;
