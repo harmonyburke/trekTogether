@@ -6,6 +6,7 @@ import '../style/tripPage.css'
 const TripPage = () => {
 
     const tripInfo = dummyData[0]
+    const travelers = tripInfo.travelers;
 
     return ( 
         <section>
@@ -21,9 +22,13 @@ const TripPage = () => {
                <h4 className='title color-change'>Dates:</h4>
                 <p className='color-change'>{tripInfo.departureDate} - {tripInfo.returnDate}</p>
                 <h4 className="title color-change">Budget:</h4>
-                <p className="color-change">{tripInfo.budget}</p>
+                <p className="color-change">${tripInfo.budget}</p>
                 <h4 className="title color-change">Attending:</h4>
-                <p className="color-change">{tripInfo.travelers}<br /></p>
+                {/* map through travelers so traveler can be formatted */}
+                {travelers.map((traveler) => (<>
+                <p key={traveler} className="color-change travelers">{traveler}</p>
+                </>  
+                ))}
                 <h4 className="title color-change">Posted:</h4>
                 <p className="createdAt color-change">{formatDistance(new Date(tripInfo.createdAt), { addSuffix: true })}
                 </p>

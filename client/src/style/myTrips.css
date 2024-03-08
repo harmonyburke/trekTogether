@@ -18,10 +18,10 @@ section {
 }
 
 .myTrip-container:hover {
-    background-color: var(--green);
-    border: solid 1px var(--green);
     padding: 1em;
+    border: solid 1px var(--green);
     box-shadow: 5px 5px 2.5px black;
+    background-color: var(--green);
 }
 
 .cardHeader img {
@@ -30,10 +30,10 @@ section {
 }
 
 .title-green {
-    color: var(--green);
     margin-bottom: .25em;
     padding-bottom: .25em;
     border-bottom: solid 1px var(--green);
+    color: var(--green);
 }
 
 .date {

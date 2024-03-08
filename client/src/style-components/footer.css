@@ -2,8 +2,8 @@
 
 footer {
     margin: 1em;
-    border-top: solid 2px var(--white);
     text-align: center;
+    border-top: solid 2px var(--white);
 }
 
 footer h3 {
@@ -35,10 +35,10 @@ footer h3 {
 }
 
 .icon:hover {
-    background-color: var(--green);
     padding: 0 .1em;
     border-radius: 5px;
-    border: solid 1px var(--white)
+    border: solid 1px var(--white);
+    background-color: var(--green);
 }
 
 /* tablets */

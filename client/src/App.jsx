@@ -1,5 +1,7 @@
 // import outlet
 import { Outlet } from 'react-router-dom'
+import { Provider } from 'react-redux'
+import store from './utils/store'
 
 // import css
 import './App.css'
@@ -12,9 +14,11 @@ const App = () => {
 
   return (
     <>
-    <Header></Header>
-    <Outlet></Outlet>
-    <Footer></Footer>
+    <Header />
+    <Provider store={store}>
+    <Outlet />
+    </Provider>
+    <Footer />
     </>
   )
 }
