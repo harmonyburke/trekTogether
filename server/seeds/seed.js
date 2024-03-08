@@ -7,11 +7,11 @@ const userSeeds = require("./userSeeds.json");
 const tripSeeds = require("./tripSeeds.json");
 
 db.once("open", async () => {
-  await cleanDB("Trip", "trips");
+  // await cleanDB("Trip", "trips");
 
-  await cleanDB("User", "users");
+  // await cleanDB("User", "users");
 
-  await User.create(userSeeds);
+  // await User.create(userSeeds);
   await Trips.create(tripSeeds);
 
   console.log("Database seeded!");

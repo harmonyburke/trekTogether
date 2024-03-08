@@ -23,7 +23,7 @@ const tripSchema = new Schema(
             default: Date.now
         },
         userId: {
-            type: Number,
+            type: String,
             required: true
         },
         departureDate: {

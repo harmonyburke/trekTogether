@@ -1,38 +1,45 @@
 [
     {
-        "location": "Colorado",
-        "budget" : "500",
-        "description": "Look at pretty mountains.",
-        "image": "server/seeds/images/colorado.jpg",
-        "departureDate": "03/04/2024",
-        "returnDate": "04/01/2024"
+        "where": "Colorado",
+        "budget" : "4514",
+        "description": "Look at mountains.",
+        "img": "server/seeds/images/colorado.jpg",
+        "departureDate": "05/08/2024",
+        "returnDate": "07/01/2024",
+        "userId": "65ea8432f19b23ab5073e356"
 
     },
     {
-        "location": "Arizona",
-        "budget" : "760",
-        "description": "Look at cacti.",
-        "image": "server/seeds/images/colorado.jpg",
-        "departureDate": "03/14/2024",
-        "returnDate": "04/12/2024"
+        "where": "Nevda",
+        "budget" : "424",
+        "description": "Look at casions.",
+        "img": "server/seeds/images/colorado.jpg",
+        "departureDate": "02/09/2024",
+        "returnDate": "07/10/2024",
+        "userId": "65ea8432f19b23ab5073e356"
+
 
     },
     {
-        "location": "Arkansas",
-        "budget" : "5764",
-        "description": "Look at waterfalls.",
-        "image": "server/seeds/images/colorado.jpg",
-        "departureDate": "03/18/2024",
-        "returnDate": "04/30/2024"
-
-    },
-    {
-        "location": "Florida",
+        "where": "Florida",
         "budget" : "4214",
         "description": "Look at gators.",
-        "image": "server/seeds/images/colorado.jpg",
+        "img": "server/seeds/images/colorado.jpg",
         "departureDate": "05/04/2024",
-        "returnDate": "06/01/2024"
+        "returnDate": "06/01/2024",
+        "userId": "65ea8432f19b23ab5073e356"
+
+
+    },
+    {
+        "where": "Florida",
+        "budget" : "4214",
+        "description": "Look at gators.",
+        "img": "server/seeds/images/colorado.jpg",
+        "departureDate": "05/04/2024",
+        "returnDate": "06/01/2024",
+        "userId": "65ea8432f19b23ab5073e356"
+
 
     }
 ]
