@@ -29,8 +29,8 @@ type Query {
     users: [User]
     trips: [Trip]
     trip(
-        _id: ID!
-        ): Trip
+    _id: ID!
+    ): Trip
 }
 
 type Mutation {
@@ -51,17 +51,17 @@ type Mutation {
         joined: Boolean!
     ): Trip
 
-    joinTrip(tripId: ID!, userId: ID!): Trip
+    joinTrip (tripId: ID!, userId: ID!): Trip
 
     updateTrip(
             _id: ID!
             tripName: String
             budget: Float
-            location: String
-            details: String
+            where: String
+            description: String
     ): Trip
-        login(email: String!, password: String!): Auth
-}
-`
+
+    login (email: String!, password: String!): Auth
+}`
 
 module.exports = typeDefs;

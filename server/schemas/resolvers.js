@@ -40,10 +40,10 @@ const resolvers = {
         },
         // function to update the trip details
         // added to update travelers as well
-        updateTrip: async (parent, { _id, tripName, budget, location, details, travelerIds }) => {
+        updateTrip: async (parent, { _id, tripName, budget, where, description, travelerIds }) => {
             const trip = await Trips.findByIdAndUpdate(
                 _id,
-                { tripName, budget, location, details },
+                { tripName, budget, where, description },
                 { new: true }
             );
 
