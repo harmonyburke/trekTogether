@@ -1,10 +1,8 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react-hooks/rules-of-hooks */
 import randomImg from "../utils/randomImg";
 import { useState } from 'react';
 import AddTripComponent from "./AddTripComponent";
-
-
-const CreateTrip = ( trip ) => {
 
 const EditTripComponent = ( trip  ) => {
 
