@@ -32,7 +32,7 @@
         "description": "Look at gators.",
         "image": "server/seeds/images/colorado.jpg",
         "departureDate": "05/04/2024",
-        "returnDate": "06/01/2024",
+        "returnDate": "06/01/2024"
 
     }
 ]
