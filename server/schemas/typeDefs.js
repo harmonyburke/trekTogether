@@ -61,7 +61,17 @@ type Mutation {
             description: String
     ): Trip
 
+        login(email: String!, password: String!): Auth
+}
+
+deleteTrip(
+    tripId: ID!
+): ID
+`
+
+
     login (email: String!, password: String!): Auth
 }`
+
 
 module.exports = typeDefs;
