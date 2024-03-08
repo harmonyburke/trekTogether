@@ -1,16 +1,16 @@
-const {Schema, model} = require ('mongoose');
+const { Schema, model } = require('mongoose');
 // const Trips = require('./Trips');
 
-const userSchema = new Schema ({
+const userSchema = new Schema({
     name: {
         type: String,
         required: true
     },
     email: {
         type: String,
-        required:true,
+        required: true,
         unique: true,
-        match:[/.+@.+\..+/, 'Must match an email address!']
+        match: [/.+@.+\..+/, 'Must match an email address!']
     },
     password: {
         type: String,
@@ -21,6 +21,6 @@ const userSchema = new Schema ({
 
 });
 
-const User=model('User', userSchema);
+const User = model('User', userSchema);
 
-module.exports= User;
+module.exports = User;
