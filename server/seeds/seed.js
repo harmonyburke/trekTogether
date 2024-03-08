@@ -1,10 +1,10 @@
 const db = require("../config/connection");
-const cleanDB = require('./cleanDB');
+const cleanDB = require("./cleanDB");
 
 const { User, Trips } = require("../models");
 
 const userSeeds = require("./userSeeds.json");
-const tripSeeds=require('./tripSeeds.json');
+const tripSeeds = require("./tripSeeds.json");
 
 db.once("open", async () => {
   await cleanDB("Trip", "trips");
