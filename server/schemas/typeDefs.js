@@ -62,6 +62,10 @@ type Mutation {
     ): Trip
         login(email: String!, password: String!): Auth
 }
+
+deleteTrip(
+    tripId: ID!
+): ID
 `
 
 module.exports = typeDefs;
