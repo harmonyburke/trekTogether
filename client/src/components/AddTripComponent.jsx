@@ -44,12 +44,12 @@ const AddTripComponent = () => {
             onChange={handleChange}
             /><br />
 
-            {/* input for IMG upload */}
-            <label htmlFor="fileInput" className="title custom-file-upload color-change">
-            <input type="file" id="fileInput" hidden />
-            Click here to upload an image!
-            </label>
-            <br />
+        {/* input for IMG upload */}
+        <label htmlFor="fileInput" className="title custom-file-upload color-change">
+        <input type="file" id="fileInput" hidden />
+        Click here to upload an image!
+        </label>
+        <br />
 
             <div className="dateBudget-container">
                 <label className="title departure-date">Departure Date:</label><br />
@@ -99,11 +99,12 @@ const AddTripComponent = () => {
             onChange={handleChange}
             /> <br />
 
-            <button type="submit" className="addTrip-submit ">Add Trip</button>
+        <button type="submit" className="addTrip-submit ">Add Trip</button>
 
         </form>
     </section>
 );
-}
+};
+};
  
 export default AddTripComponent;
