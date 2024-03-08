@@ -1,6 +1,6 @@
 import randomImg from "../utils/randomImg";
 import { useState } from 'react';
-import { CREATE_TRIP } from '../utils/mutations';
+import { CREATE_TRIP } from '../../utils/mutations';
 import { useMutation } from '@apollo/client';
 
 const AddTripComponent = () => {
