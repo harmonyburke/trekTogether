@@ -80,5 +80,6 @@ const EditTripComponent = ( trip  ) => {
         return (<AddTripComponent />)
     }
 }
+}
 
 export default EditTripComponent;
