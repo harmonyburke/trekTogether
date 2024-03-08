@@ -2,7 +2,7 @@ import randomImg from "../utils/randomImg";
 import { useState } from 'react'
 
 
-const CreateTrip = ( trip  ) => {
+const CreateTrip = ( trip ) => {
 
 
     if (trip.showData) {
