@@ -41,13 +41,13 @@ const EditTripComponent = ({ trip }) => {
                 })
                 console.log('Trip updated!', data.updateTrip);
             } catch (error) {
-                console.error()
+                console.error('Error updating trip!', err);
             }
-        }
+        };
 
     return (
         <section>
-            <form action="/add-trip" style={{ backgroundImage: `url(${randomImg()})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} className="addTrip">
+            <form onSubmit={handleSubmit} style={{ backgroundImage: `url(${randomImg()})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} className="addTrip">
 
             {/* input for WHERE */}
             <input id="whereInput" className='title color-change' type="text" 
@@ -102,6 +102,6 @@ const EditTripComponent = ({ trip }) => {
         return (<AddTripComponent />)
     }
 }
-}
+
 
 export default EditTripComponent;
