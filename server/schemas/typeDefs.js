@@ -61,15 +61,16 @@ type Mutation {
             description: String
     ): Trip
 
-        login(email: String!, password: String!): Auth
+    
+    login(email: String!, password: String!): Auth
+
+
+    deleteTrip(
+            tripId: ID!
+        ): ID
 }
 
-deleteTrip(
-    tripId: ID!
-): ID
-`
 
-
-
+`;
 
 module.exports = typeDefs;
