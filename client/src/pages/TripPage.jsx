@@ -25,8 +25,8 @@ const TripPage = () => {
                 <p className="color-change">${tripInfo.budget}</p>
                 <h4 className="title color-change">Attending:</h4>
                 {/* map through travelers so traveler can be formatted */}
-                {travelers.map((traveler) => (<>
-                <p key={traveler} className="color-change travelers">{traveler}</p>
+                {travelers.map((traveler, index) => (<>
+                <p key={index} className="color-change travelers">{traveler}</p>
                 </>  
                 ))}
                 <h4 className="title color-change">Posted:</h4>

@@ -52,7 +52,7 @@ mutation deleteTrip($tripId: ID!){
 
 export const LOGIN= gql`
 mutation login($email: String, $password: String){
-    login (email: $email, password $password ){
+    login (email: $email, password: $password ){
         token
         user{
             _id

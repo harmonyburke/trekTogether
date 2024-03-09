@@ -6,9 +6,9 @@ const MyTrips = () => {
 
     return (
         <section>
-            {trips.filter((trip) => trip.joined === true).map((trip) => (
+            {trips.filter((trip) => trip.joined === true).map((trip, index) => (
                 <TripList
-                    key={trip.id}
+                    key={index}
                     id={trip.id}
                     user={trip.user}
                     img={trip.img }

@@ -3,7 +3,7 @@ import "../style-components/navBar.css"
 
 const NavBar = () => {
 
-    const isLoggedIn = false
+    const isLoggedIn = true
 
     const navLinks = [
         {
