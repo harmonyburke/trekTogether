@@ -42,7 +42,7 @@ To run the application please run in terminal:
 
 ## Creator(s) Information
 
-Please reach out to me if you have any further questions via:
+Please reach out if you have any further questions via:
 
 
 <a href='https://github.com/AnnaT7459'> Anna Turner</a>
@@ -58,7 +58,6 @@ Please reach out to me if you have any further questions via:
 Email: shanhun.codes@gmail.com
 
 ## Dependencies
-### Client
 
  * @apollo/client@3.7.14
  * @fortawesome/free-brands-svg-icons@6.5.1

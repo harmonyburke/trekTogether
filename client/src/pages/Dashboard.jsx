@@ -5,9 +5,9 @@ const Dashboard = () => {
 
     return ( 
         <section>
-            {trips.map((trip) => (
+            {trips.map((trip, index) => (
                 <TripList 
-                    key={trip.id}
+                    key={index}
                     user={trip.user}
                     img={trip.img}
                     where={trip.where}

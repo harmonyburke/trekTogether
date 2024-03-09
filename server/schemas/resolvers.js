@@ -8,24 +8,24 @@ const resolvers = {
     Query: {
        users: async () => User.find(),
        trips: async () => Trips.find(),
-       trip: async (parent, { _id }) => Trips.findById(_id),
+       trip: async (_, { _id }) => Trips.findById(_id),
     },
     
     Mutation: {
         // function to add a new user
-        addUser: async (parent, args) => {
+        addUser: async (_, args) => {
             const user = await User.create(args);
             const token = signToken(user);
             return { token, user };
         },
         // function to create a new trip
-        createTrip: async (parent, args) => {
+        createTrip: async (_, args) => {
             const trip = await Trips.create({ ...args, 
             userId: args.user });
             return trip;
         },
         // function to join a trip that has already been created
-        joinTrip: async (parent, { tripId, userId }) => {
+        joinTrip: async (_, { tripId, userId }) => {
             const trip = await Trips.findById(tripId);
             const user = await User.findById(userId);
 
@@ -40,7 +40,7 @@ const resolvers = {
         },
         // function to update the trip details
         // added to update travelers as well
-        updateTrip: async (parent, { _id, tripName, budget, where, description, travelerIds }) => {
+        updateTrip: async (_, { _id, tripName, budget, where, description, travelerIds }) => {
             const trip = await Trips.findByIdAndUpdate(
                 _id,
                 { tripName, budget, where, description },
