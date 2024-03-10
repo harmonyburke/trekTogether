@@ -18,13 +18,13 @@ export const QUERY_TRIPS = gql`
 `;
 
 export const QUERY_SINGLE_TRIP = gql`
-  query signleTrip($tripId: ID!) {
+  query singleTrip($tripId: ID!) {
     trip(tripId: $tripId) {
       _id
       budget
       where
       description
-      user
+      userId
       img
       departureDate
       returnDate

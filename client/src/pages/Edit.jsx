@@ -1,33 +1,35 @@
 import EditTripComponent from "../components/EditTripComponent";
 // import trips from "../JSONdata/dummyData.json";
 import { useQuery } from '@apollo/client';
-import { QUERY_TRIPS } from '../../utils/queries';
+import { QUERY_SINGLE_TRIP } from '../../utils/queries';
 
 
 const Edit = () => {
 
-  const data  = useQuery(QUERY_TRIPS, {
-    fetchPolicy: "no-cache"
+  const tripId = window.location.pathname.split("/").pop();
+
+  const {data}  = useQuery(QUERY_SINGLE_TRIP, {
+    variables: {
+      tripId
+    }
   });
 
-  const tripId = parseInt(window.location.pathname.split("/").pop());
-  const currentTrip = data && data.data ? data.data.filter((trip) => trip.id === tripId) : [];
+  const currentTrip = data?.trip
 
-  console.log(tripId)
 
   return (
     <section>
-      {currentTrip.length > 0 && (
+      {currentTrip && (
         <EditTripComponent
-          id={currentTrip[0].id}
-          user={currentTrip[0].user}
-          img={currentTrip[0].img}
-          where={currentTrip[0].where}
-          departureDate={currentTrip[0].departureDate}
-          returnDate={currentTrip[0].returnDate}
-          budget={currentTrip[0].budget}
-          createdAt={currentTrip[0].createdAt}
-          description={currentTrip[0].description}
+          id={currentTrip._id}
+          user={currentTrip.userId}
+          img={currentTrip.img}
+          where={currentTrip.where}
+          departureDate={currentTrip.departureDate}
+          returnDate={currentTrip.returnDate}
+          budget={currentTrip.budget}
+          createdAt={currentTrip.createdAt}
+          description={currentTrip.description}
           showData={true}
         />
       )}

@@ -8,7 +8,10 @@ const resolvers = {
     Query: {
        users: async () => User.find(),
        trips: async () => Trips.find(),
-       trip: async (_, { _id }) => Trips.findById(_id),
+       trip: async (_, { tripId }) => {
+        const trip = await Trips.findById(tripId)
+        return trip
+       } ,
     },
     
     Mutation: {
@@ -40,10 +43,10 @@ const resolvers = {
         },
         // function to update the trip details
         // added to update travelers as well
-        updateTrip: async (_, { _id, tripName, budget, where, description, travelerIds }) => {
+        updateTrip: async (_, { tripId, budget, where, description, travelerIds }) => {
             const trip = await Trips.findByIdAndUpdate(
-                _id,
-                { tripName, budget, where, description },
+                tripId,
+                { budget, where, description },
                 { new: true }
             );
 

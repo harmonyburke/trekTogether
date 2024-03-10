@@ -1,10 +1,10 @@
-const typeDefs = `
+const typeDefs = `#graphql
 type Trip {
     _id: ID
     budget: Int
     where: String!
     description: String
-    user: String!
+    userId: ID!
     img: String
     departureDate: String!
     returnDate: String!
@@ -29,7 +29,7 @@ type Query {
     users: [User]
     trips: [Trip]
     trip(
-    _id: ID!
+    tripId: ID!
     ): Trip
 }
 
@@ -54,8 +54,7 @@ type Mutation {
     joinTrip (tripId: ID!, userId: ID!): Trip
 
     updateTrip(
-            _id: ID!
-            tripName: String
+            tripId: ID!
             budget: Float
             where: String
             description: String
