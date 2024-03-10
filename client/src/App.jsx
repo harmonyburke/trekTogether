@@ -1,7 +1,8 @@
 // import outlet
 import { Outlet } from 'react-router-dom'
-import { Provider } from 'react-redux'
-import store from './utils/store'
+// import { Provider } from 'react-redux'
+// import store from './utils/store'
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
 // import css
 import './App.css'
@@ -10,14 +11,19 @@ import './App.css'
 import Header from './components/Header'
 import Footer from './components/Footer'
 
+const client = new ApolloClient({
+  uri: '/graphql',
+  cache: new InMemoryCache(),
+});
+
 const App = () => {
 
   return (
     <>
     <Header />
-    <Provider store={store}>
+    <ApolloProvider client={client}>
     <Outlet />
-    </Provider>
+    </ApolloProvider>
     <Footer />
     </>
   )
