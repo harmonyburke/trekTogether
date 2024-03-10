@@ -32,12 +32,12 @@ mutation joinTrip($tripId:ID!, $userId: ID!){
 }`;
 
 export const UPDATE_TRIP =gql`
-mutation updateTrip($tripId: ID!, $tripName: String!, $budget: Float!, $location: String!, $details:String! ){
-    updateTrip(tripId: $tripId, tripName: $tripName, budget: $budget, location: $location, details: $details){
+mutation updateTrip($tripId: ID!, $budget: Float!, $where: String!, $description:String! ){
+    updateTrip(tripId: $tripId, budget: $budget, where: $where, description: $description){
         _id
         budget
-        location
-        details
+        where
+        description
     }
 }`;
 

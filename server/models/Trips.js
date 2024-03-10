@@ -37,6 +37,9 @@ const tripSchema = new Schema(
         joined: {
             type: Boolean,
             default: false
+        },
+        travelers: {
+            
         }
     });
 
