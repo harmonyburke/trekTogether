@@ -44,11 +44,9 @@ type Mutation {
         budget: Int!
         where: String!
         description: String!
-        user: ID!
-        img: String
         departureDate: String!
         returnDate: String!
-        joined: Boolean
+        
     ): Trip
 
     joinTrip (tripId: ID!, userId: ID!): Trip
@@ -58,6 +56,7 @@ type Mutation {
             budget: Float
             where: String
             description: String
+            joined: Boolean
     ): Trip
 
     

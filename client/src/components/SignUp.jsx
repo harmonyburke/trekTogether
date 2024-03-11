@@ -1,6 +1,6 @@
 import randomImg from "../utils/randomImg";
 
-import { ADD_USER } from "../../utils/mutations";
+import { ADD_USER } from "../utils/mutations";
 import { useMutation } from "@apollo/client";
 import { useState } from "react";
 

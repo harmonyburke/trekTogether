@@ -23,6 +23,10 @@ const resolvers = {
         },
         // function to create a new trip
         createTrip: async (_, args, context) => {
+
+          console.log(args)
+          console.log(context)
+
           if (context.user) {
             const trip = await Trips.create({ ...args, 
             userId: context.user._id });
