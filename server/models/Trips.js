@@ -1,4 +1,4 @@
-const { Schema, model } = require('mongoose');
+const { Schema, model, ObjectId } = require('mongoose');
 
 const tripSchema = new Schema(
     {
@@ -38,9 +38,10 @@ const tripSchema = new Schema(
             type: Boolean,
             default: false
         },
-        travelers: {
-            
-        }
+        travelers: [{
+            type: Schema.Types.ObjectId,
+            ref: "User"
+        }]
     });
 
 const Trips = model("Trips", tripSchema);

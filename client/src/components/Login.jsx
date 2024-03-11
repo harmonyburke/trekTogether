@@ -1,9 +1,13 @@
-import randomImg from "../utils/randomImg";
-
 const Login = () => {
+    const imgStyle =  { 
+    backgroundImage: `url(/images/img2.jpg)`, 
+    backgroundSize: 'cover', 
+    backgroundPosition: 'center', 
+    backgroundRepeat: 'no-repeat' }
+
     return ( 
         <section>
-            <form action="submit" id='login-form' style={{ backgroundImage: `url(${randomImg()})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
+            <form action="submit" id='login-form' style={imgStyle}>
                 <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
                 {/* Email input */}
                 <input className='input'

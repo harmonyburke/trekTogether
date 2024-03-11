@@ -5,6 +5,7 @@ const Dashboard = () => {
 
     return ( 
         <section>
+            
             {trips.map((trip, index) => (
                 <TripList 
                     key={index}

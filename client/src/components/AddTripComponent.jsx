@@ -1,4 +1,3 @@
-import randomImg from "../utils/randomImg";
 import { useState } from 'react';
 import { CREATE_TRIP } from '../../utils/mutations';
 import { useMutation } from '@apollo/client';
@@ -14,25 +13,35 @@ const AddTripComponent = () => {
 
     const [createTrip, { error }] = useMutation(CREATE_TRIP);
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setTripData({...tripData,[name]: value,});
-    };
+    // const handleChange = (e) => {
+    //     const { name, value } = e.target;
+    //     setTripData({...tripData,[name]: value,});
+    // };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const { data } = await createTrip({ variable: { tripInput: tripData },
+            const { data } = await createTrip({ 
+                variable: { 
+                    tripInput: tripData 
+                },
             });
             // successful
             console.log('Trip created!', data.createTrip);
     } catch (err) {
         console.error('Error creating trip!', err);
-    };
+    }
+}
+
+const imgStyle =  { 
+    backgroundImage: `url(/images/img32.jpg)`, 
+    backgroundSize: 'cover', 
+    backgroundPosition: 'center', 
+    backgroundRepeat: 'no-repeat' }
 
     return (             
     <section>
-        <form onSubmit={handleSubmit} style={{ backgroundImage: `url(${randomImg()})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} className="addTrip">
+        <form onSubmit={handleSubmit} style={imgStyle} className="addTrip">
 
             <input 
             id="whereInput" 
@@ -40,8 +49,7 @@ const AddTripComponent = () => {
             type="text" 
             name="where" 
             placeholder="Where to?" 
-            value={tripData.where}
-            onChange={handleChange}
+            // onChange={handleChange}
             /><br />
 
         {/* input for IMG upload */}
@@ -58,9 +66,8 @@ const AddTripComponent = () => {
                 id="depDateInput" 
                 className="color-change dateInput" 
                 type="date"
-                name="depart"
-                value={tripData.depart}
-                onChange={handleChange}
+                name="departureDate"
+                // onChange={handleChange}
                 /><br />
         
                 {/* input RETURN Date */}
@@ -68,9 +75,8 @@ const AddTripComponent = () => {
                 id="retDateInput" 
                 className="color-change dateInput" 
                 type="date"
-                name="return"
-                value={tripData.return}
-                onChange={handleChange}
+                name="returnDate"
+                // onChange={handleChange}
                 /><br />
             
                 {/* input BUDGET */}
@@ -80,8 +86,7 @@ const AddTripComponent = () => {
                 className="color-change budgetInput" 
                 type="number" 
                 name="budget"
-                value={tripData.budget}
-                onChange={handleChange}
+                // onChange={handleChange}
                 /><span> $</span> <br />
                 <label>(USD)</label><br />
             </div>
@@ -95,8 +100,7 @@ const AddTripComponent = () => {
             type="text"
             name="description"
             placeholder="We're Excited to hear your plan!!"
-            value={tripData.budget}
-            onChange={handleChange}
+            // onChange={handleChange}
             /> <br />
 
         <button type="submit" className="addTrip-submit ">Add Trip</button>
@@ -105,6 +109,6 @@ const AddTripComponent = () => {
     </section>
 );
 };
-};
+// };
  
 export default AddTripComponent;

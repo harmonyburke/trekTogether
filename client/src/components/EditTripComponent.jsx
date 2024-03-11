@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react-hooks/rules-of-hooks */
-import randomImg from "../utils/randomImg";
 import { useState } from 'react';
 import AddTripComponent from "./AddTripComponent";
 import { useMutation } from "@apollo/client";
@@ -44,9 +43,15 @@ const EditTripComponent = ( trip ) => {
             }
         };
 
+        const imgStyle =  { 
+            backgroundImage: `url(/images/img8.jpg)`, 
+            backgroundSize: 'cover', 
+            backgroundPosition: 'center', 
+            backgroundRepeat: 'no-repeat' }
+
     return (
         <section>
-            <form onSubmit={handleSubmit} style={{ backgroundImage: `url(${randomImg()})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} className="addTrip">
+            <form onSubmit={handleSubmit} style={imgStyle} className="addTrip">
 
             {/* input for WHERE */}
             <input id="whereInput" className='title color-change' type="text" 

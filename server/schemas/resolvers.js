@@ -25,6 +25,7 @@ const resolvers = {
         createTrip: async (_, args) => {
             const trip = await Trips.create({ ...args, 
             userId: args.user });
+            console.log(trip);
             return trip;
         },
         // function to join a trip that has already been created
