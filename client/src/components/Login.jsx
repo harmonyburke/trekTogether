@@ -1,49 +1,53 @@
-import { useState } from "react";
-import { ADD_USER, LOGIN } from "../../utils/mutations";
 import randomImg from "../utils/randomImg";
+import { useState } from 'react';
+import { useMutation } from '@apollo/client';
+import { Link } from 'react-router-dom';
+import { LOGIN } from '../utils/mutations';
+import Auth from '../utils/auth';
 
-import { useMutation } from "@apollo/client";
+function Login() {
+  const [formState, setFormState] = useState({ email: '', password: '' });
+  const [login, { error }] = useMutation(LOGIN);
 
-
-
-const Login = (user) => {
-
-    const loginUser=useMutation(LOGIN);
-
-  const [email, setEmail] =useState(user.email);
-  const [password, setPassword]= useState(user.password);
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        try{
-            await loginUser({
-                variables:{
-                    email,
-                    password
-                }
-            })
-            console.log('Login!')
-        } catch(err){
-            console.error("Unable to login!", err)
-        }
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const mutationResponse = await login({
+        variables: { email: formState.email, password: formState.password },
+      });
+      const token = mutationResponse.data.login.token;
+      Auth.login(token);
+    } catch (e) {
+      console.log(e);
     }
+  };
 
-
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
     return ( 
         <section>
-            <form action="submit" id='login-form' style={{ backgroundImage: `url(${randomImg()})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
+            <form onSubmit={handleFormSubmit} id='login-form' style={{ backgroundImage: `url(${randomImg()})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
                 <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
                 {/* Email input */}
                 <input className='input'
                 type="email" 
-                placeholder='Email' 
-                required onChange={(e) => setEmail(e.target.value)}/> <br />
+                name="email"
+                placeholder='Email'
+                required
+                onChange={handleChange}/> <br />
                 {/* Password Input */}
                 <input className='input'
                 type="password"
+                name="password"
                 placeholder='Password'
-                required onChange={(e) => setPassword(e.target.value)} /> <br />
-                <button type='submit' id='login-signup-btn' onChange={handleSubmit}>Login</button>
+                required
+                onChange={handleChange} /> <br />
+                <button type='submit' id='login-signup-btn'>Login</button>
                 <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
             </form>
         </section>
