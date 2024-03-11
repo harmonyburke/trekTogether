@@ -1,14 +1,18 @@
 import trips from '../JSONdata/dummyData.json'
 import TripList from '../components/TripList'
 import '../style/myTrips.css'
+import { useQuery } from '@apollo/client'
+import { QUERY_TRIPS } from '../utils/queries'
 
 const MyTrips = () => {
-
+const { data, loading, error } = useQuery(QUERY_TRIPS)
+const trips = data?.trips || []
+if (loading) return <div>Loading...</div>
     return (
         <section>
-            {trips.filter((trip) => trip.joined === true).map((trip, index) => (
+            {trips.map((trip) => (
                 <TripList
-                    key={index}
+                    key={trip.id}
                     id={trip.id}
                     user={trip.user}
                     img={trip.img }
