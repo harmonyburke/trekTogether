@@ -28,8 +28,8 @@ const AddTripComponent = () => {
             console.log('Trip created!', data.createTrip);
     } catch (err) {
         console.error('Error creating trip!', err);
-    };
-
+    }
+    }
     return (             
     <section>
         <form onSubmit={handleSubmit} style={{ backgroundImage: `url(${randomImg()})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} className="addTrip">
@@ -105,6 +105,6 @@ const AddTripComponent = () => {
     </section>
 );
 };
-};
+
  
 export default AddTripComponent;
