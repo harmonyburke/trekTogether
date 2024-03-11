@@ -1,7 +1,7 @@
 import EditTripComponent from "../components/EditTripComponent";
 // import trips from "../JSONdata/dummyData.json";
 import { useQuery } from '@apollo/client';
-import { QUERY_SINGLE_TRIP } from '../../utils/queries';
+import { QUERY_SINGLE_TRIP } from '../utils/queries';
 
 
 const Edit = () => {

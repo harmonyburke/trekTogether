@@ -4,7 +4,7 @@ import randomImg from "../utils/randomImg";
 import { useState } from 'react';
 import AddTripComponent from "./AddTripComponent";
 import { useMutation } from "@apollo/client";
-import { UPDATE_TRIP } from "../../utils/mutations";
+import { UPDATE_TRIP } from "../utils/mutations";
  
 const EditTripComponent = ( trip ) => {
     const [updateTrip, { data: updatedTrip}] = useMutation(UPDATE_TRIP);
