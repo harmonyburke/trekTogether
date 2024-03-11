@@ -22,10 +22,12 @@ const resolvers = {
             return { token, user };
         },
         // function to create a new trip
-        createTrip: async (_, args) => {
+        createTrip: async (_, args, context) => {
+          if (context.user) {
             const trip = await Trips.create({ ...args, 
-            userId: args.user });
+            userId: context.user._id });
             return trip;
+          } throw AuthenticationError
         },
         // function to join a trip that has already been created
         joinTrip: async (_, { tripId, userId }) => {
@@ -33,7 +35,7 @@ const resolvers = {
             const user = await User.findById(userId);
 
             if (!trip || !user) {
-                throw new AuthenticationError('Unable to find trip or user ID!');
+                throw AuthenticationError;
             }
             trip.travelers.push(user);
             user.trips.push(trip);
@@ -64,14 +66,15 @@ const resolvers = {
       }
       return tripId;
     },
+
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
       if (!user) {
-        throw new AuthenticationError("User not found!");
+        throw AuthenticationError;
       }
       const correctPw = await user.isCorrectPassword(password);
       if (!correctPw) {
-        throw new AuthenticationError("Incorrect password!");
+        throw AuthenticationError;
       }
       const token = signToken(user);
       return { token, user };

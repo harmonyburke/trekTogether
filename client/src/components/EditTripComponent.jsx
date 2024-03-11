@@ -4,7 +4,7 @@ import randomImg from "../utils/randomImg";
 import { useState } from 'react';
 import AddTripComponent from "./AddTripComponent";
 import { useMutation } from "@apollo/client";
-import { UPDATE_TRIP } from "../../utils/mutations";
+import { UPDATE_TRIP } from "../utils/mutations";
  
 const EditTripComponent = ( trip ) => {
     const [updateTrip, { data: updatedTrip}] = useMutation(UPDATE_TRIP);
@@ -94,7 +94,7 @@ const EditTripComponent = ( trip ) => {
             </div>
                 
             <label className="title description-title">Describe what you would like to do on this trip!!</label><br />
-                <textarea type="date" className="color-change textAreaInput" 
+                <textarea type="text" className="color-change textAreaInput" 
                 placeholder="We're Excited to hear your plan!!"
                 defaultValue={description}
                 onChange={(e) => setDescription(e.target.value)}
