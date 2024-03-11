@@ -95,11 +95,11 @@ const AddTripComponent = () => {
             type="text"
             name="description"
             placeholder="We're Excited to hear your plan!!"
-            value={tripData.budget}
+            value={tripData.description}
             onChange={handleChange}
             /> <br />
 
-        <button type="submit" className="addTrip-submit ">Add Trip</button>
+        <button type="submit" className="addTrip-submit " onChange={handleSubmit}>Add Trip</button>
 
         </form>
     </section>
