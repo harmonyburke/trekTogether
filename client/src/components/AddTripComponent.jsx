@@ -103,5 +103,4 @@ const AddTripComponent = () => {
     </section>
 );
 };
-
 export default AddTripComponent;
