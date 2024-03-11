@@ -48,7 +48,7 @@ type Mutation {
         img: String
         departureDate: String!
         returnDate: String!
-        joined: Boolean!
+        joined: Boolean
     ): Trip
 
     joinTrip (tripId: ID!, userId: ID!): Trip
