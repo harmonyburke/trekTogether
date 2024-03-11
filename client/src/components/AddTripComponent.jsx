@@ -28,8 +28,8 @@ const AddTripComponent = () => {
             console.log('Trip created!', data.createTrip);
     } catch (err) {
         console.error('Error creating trip!', err);
-    };
-
+    }
+    }
     return (             
     <section>
         <form onSubmit={handleSubmit} style={{ backgroundImage: `url(${randomImg()})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} className="addTrip">
@@ -95,16 +95,16 @@ const AddTripComponent = () => {
             type="text"
             name="description"
             placeholder="We're Excited to hear your plan!!"
-            value={tripData.budget}
+            value={tripData.description}
             onChange={handleChange}
             /> <br />
 
-        <button type="submit" className="addTrip-submit ">Add Trip</button>
+        <button type="submit" className="addTrip-submit " onChange={handleSubmit}>Add Trip</button>
 
         </form>
     </section>
 );
 };
-};
+
  
 export default AddTripComponent;
