@@ -1,4 +1,4 @@
-import CreateTrip from "../components/EditTripComponent";
+import CreateTrip from "../components/AddTripComponent";
 
 import "../style/addTrip.css";
 
