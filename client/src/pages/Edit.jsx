@@ -1,21 +1,17 @@
 import EditTripComponent from "../components/EditTripComponent";
-// import trips from "../JSONdata/dummyData.json";
-import { useQuery } from '@apollo/client';
-import { QUERY_SINGLE_TRIP } from '../utils/queries';
-
+import { useQuery } from "@apollo/client";
+import { QUERY_SINGLE_TRIP } from "../utils/queries";
 
 const Edit = () => {
-
   const tripId = window.location.pathname.split("/").pop();
 
-  const {data}  = useQuery(QUERY_SINGLE_TRIP, {
+  const {data} = useQuery(QUERY_SINGLE_TRIP, {
     variables: {
-      tripId
-    }
+      tripId,
+    },
   });
 
-  const currentTrip = data?.trip
-
+  const currentTrip = data?.trip;
 
   return (
     <section>

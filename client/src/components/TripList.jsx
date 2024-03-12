@@ -1,51 +1,33 @@
-import formatDistance from "date-fns/formatDistanceToNow";
 import defaultPic from "../assets/defaultPic.jpeg";
-// import formatDate from "../utils/helpers";
+import { useMutation } from "@apollo/client";
+import { DELETE_TRIP } from "../utils/mutations";
 
 // import css
 import "../style-components/tripList.css";
 
 const TripList = (trip) => {
-  const loggedInUser = trip.userId;
+  const loggedInUser = "65ea8432f19b23ab5073e357";
   const editHref = `/edit/${trip.id}`;
-  console.log(trip)
+  const tripPageHref = `/trippage/${trip.id}`;
 
-  const d = new Date();
-  const formattedDate = `${(d.getMonth() + 1).toString().padStart(2, '0')}/${d.getDate().toString().padStart(2, '0')}/${d.getFullYear()}`;
-  console.log(formattedDate);
-  console.log(trip.departureDate);
-  
-  const currentDate = new Date(); // Use a new Date object for current date
-  const tripDepartureDateParts = trip.departureDate.split("/");
-  const formattedTripDepartureDate = new Date(tripDepartureDateParts[2], tripDepartureDateParts[0] - 1, tripDepartureDateParts[1]);
-  
-  if (currentDate > formattedTripDepartureDate) {
-      console.log("Expired");
-    return
-  } 
+  const [deleteTrip] = useMutation(DELETE_TRIP);
 
-
-  const handleDelete = (e) => {
+  const handleDelete = async (e) => {
     e.preventDefault();
-
     window.confirm(
       "This action can not be reversed, Are you sure you wish to DELETE?"
     );
-  };
-
-  const handleRemove = (e) => {
-    e.preventDefault();
-
-    window.confirm(
-      "Are you sure you wish to remove this trip from your trips?"
-    );
-    location.reload();
+    try {
+      await deleteTrip({ variables: { tripId: trip.id } });
+    } catch (error) {
+      console.error(error);
+      alert("Your trip failed to delete");
+    }
   };
 
   return (
-    
     <section className="tripIdea-container">
-      <a className="center" href="/trippage">
+      <a className="center" href={tripPageHref}>
         <div className="cardHeader">
           <img src={defaultPic} />
         </div>
@@ -53,7 +35,8 @@ const TripList = (trip) => {
           <h3 className="title title-green">{trip.where}</h3>
           <p>Dates:</p>
           <p className="date">
-            {new Date(Number (trip.departureDate)).toDateString()} - {new Date (Number (trip.returnDate)).toDateString()}
+            {new Date(Number(trip.departureDate)).toDateString()} -{" "}
+            {new Date(Number(trip.returnDate)).toDateString()}
           </p>
           <br />
           <div className="conditional-container">
@@ -67,12 +50,12 @@ const TripList = (trip) => {
                 )}
                 {trip.userId !== loggedInUser && (
                   <>
-                    {/* <p>Created By:</p>
-                    <p className="title">{trip.userId}</p>
-                    <br /> */}
-                    
+                    <p>Created By:</p>
+                    <p className="title">{trip.username}</p>
+                    <br />
+
                     <p className="createdAt">
-                      {(new Date(Number (trip.createdAt)).toDateString())}
+                      {new Date(Number(trip.createdAt)).toDateString()}
                     </p>
                     <br />
                   </>
@@ -99,19 +82,19 @@ const TripList = (trip) => {
                     </a>
                   </>
                 )}
-                <button type="submit" id="rft-btn" onClick={handleRemove}>
+                {/* <button type="submit" id="rft-btn" onClick={handleRemove}>
                   Remove
-                </button>
+                </button> */}
                 <br />
               </>
             ) : (
               <>
-                {/* <p>Created By:</p>
-                <p className="title">{trip.user}</p>
-                <br /> */}
+                <p>Created By:</p>
+                <p className="title">{trip.username}</p>
+                <br />
                 <p>Created At:</p>
                 <p className="createdAt">
-                {new Date(Number (trip.createdAt)).toDateString()}
+                  {new Date(Number(trip.createdAt)).toDateString()}
                 </p>
                 <br />
               </>
@@ -120,6 +103,37 @@ const TripList = (trip) => {
         </div>
       </a>
     </section>
-  );};
+  );
+};
 
 export default TripList;
+
+// const d = new Date();
+// const formattedDate = `${(d.getMonth() + 1).toString().padStart(2, "0")}/${d
+//   .getDate()
+//   .toString()
+//   .padStart(2, "0")}/${d.getFullYear()}`;
+// console.log(formattedDate);
+// console.log(trip.departureDate);
+
+// const currentDate = new Date(); // Use a new Date object for current date
+// const tripDepartureDateParts = trip.departureDate.split("/");
+// const formattedTripDepartureDate = new Date(
+//   tripDepartureDateParts[2],
+//   tripDepartureDateParts[0] - 1,
+//   tripDepartureDateParts[1]
+// );
+
+// if (currentDate > formattedTripDepartureDate) {
+//   console.log("Expired");
+//   return;
+// }
+
+// const handleRemove = (e) => {
+//   e.preventDefault();
+
+//   window.confirm(
+//     "Are you sure you wish to remove this trip from your trips?"
+//   );
+//   location.reload();
+// };

@@ -8,7 +8,8 @@ export const QUERY_TRIPS = gql`
       where
       description
       userId
-      img
+      username
+      # img
       departureDate
       returnDate
       createdAt
@@ -25,7 +26,8 @@ export const QUERY_SINGLE_TRIP = gql`
       where
       description
       userId
-      img
+      username
+      # img
       departureDate
       returnDate
       createdAt
@@ -38,7 +40,7 @@ export const QUERY_USERS = gql`
   query allUsers {
     users {
       _id
-      name
+      username
       email
       password
       trips
@@ -46,13 +48,14 @@ export const QUERY_USERS = gql`
   }
 `;
 
-export const QUERY_SINGLE_USER= gql`
-query singleUser($usedId:ID!){
-    user(userId: $userId){
-        _id
-        name
-        email
-        password
-        trips
+export const QUERY_SINGLE_USER = gql`
+  query singleUser($usedId: ID!) {
+    user(userId: $userId) {
+      _id
+      username
+      email
+      password
+      trips
     }
-}`;
+  }
+`;

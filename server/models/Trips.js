@@ -26,6 +26,10 @@ const tripSchema = new Schema(
             type: String,
             required: true
         },
+        username: {
+            type: String,
+            required: true
+        },
         departureDate: {
             type: Date,
             required: true
