@@ -1,7 +1,8 @@
 import defaultPic from "../assets/defaultPic.jpeg";
-import "../style/tripPage.css";
 import { useQuery } from "@apollo/client";
 import { QUERY_SINGLE_TRIP } from "../utils/queries";
+
+import "../style/tripPage.css";
 
 const TripPage = () => {
   const tripId = window.location.pathname.split("/").pop();
@@ -12,7 +13,8 @@ const TripPage = () => {
     },
   });
   console.log(data);
-  const trip = data.trip;
+  const currentTrip = data.data.trip;
+
   return (
     <section>
       <div className="tripPage-container">
@@ -26,7 +28,8 @@ const TripPage = () => {
             <div className="tripInfo-card-context">
               <h4 className="title color-change">Dates:</h4>
               <p className="color-change">
-                {data.departureDate} - {data.returnDate}
+                {new Date(Number(data.departureDate)).toDateString()}{" "}-{" "}
+                {new Date(Number(data.returnDate)).toDateString()}
               </p>
               <h4 className="title color-change">Budget:</h4>
               <p className="color-change">${data.budget}</p>

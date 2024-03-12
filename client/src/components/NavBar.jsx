@@ -38,8 +38,7 @@ const NavBar = () => {
           <ul>
             <li>
               <Link className="nav-list" onClick={() => auth.logout()}>
-                {" "}
-                Log Out{" "}
+                Log Out
               </Link>
             </li>
           </ul>
@@ -47,7 +46,7 @@ const NavBar = () => {
           <ul>
             <li>
               <Link className="nav-list" to={"/auth"}>
-                Login/Signup
+                Login / Signup
               </Link>
             </li>
           </ul>

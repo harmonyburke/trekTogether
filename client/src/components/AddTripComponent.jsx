@@ -53,16 +53,16 @@ const AddTripComponent = () => {
           // value=""
           onChange={(e) => setWhere(e.target.value)}
         />
-        <br />
+        
         {/* input for IMG upload */}
-        <label
+        {/* <label
           htmlFor="fileInput"
           className="title custom-file-upload color-change"
         >
           <input type="file" id="fileInput" hidden />
           Click here to upload an image!
-        </label>
-        <br />
+        </label> */}
+        
         <div className="dateBudget-container">
           <label className="title departure-date">Departure Date:</label>
           <br />
@@ -94,7 +94,7 @@ const AddTripComponent = () => {
             className="color-change budgetInput"
             type="number"
             name="budget"
-            value={budget}
+            placeholder="10000"
             onChange={(e) => setBudget(e.target.value)}
           />
           <span> $</span> <br />

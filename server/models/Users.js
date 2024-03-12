@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 // const Trips = require('./Trips');
 
 const userSchema = new Schema({
-    name: {
+    username: {
         type: String,
         required: true
     },

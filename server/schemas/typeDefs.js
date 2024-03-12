@@ -5,6 +5,7 @@ type Trip {
     where: String!
     description: String
     userId: ID!
+    username: String
     img: String
     departureDate: String!
     returnDate: String!
@@ -14,7 +15,7 @@ type Trip {
 
 type User {
     _id: ID
-    name: String!
+    username: String!
     email: String!
     password: String!
     trips: [Trip]
@@ -35,7 +36,7 @@ type Query {
 
 type Mutation {
     addUser(
-        name: String!
+        username: String!
         email: String!
         password: String!
     ): Auth

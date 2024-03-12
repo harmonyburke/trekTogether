@@ -2,13 +2,22 @@
 
 .nav-list {
   width: 25%;
-  margin-bottom: 1em;
+  margin: 0em 0 1em;
   display: inline-block;
   text-align: center;
 }
 
 .nav-list ul {
   list-style: none;
+  margin: 0;
+}
+
+.nav-list ul li {
+  margin: 0;
+}
+
+.nav-list ul li a {
+  margin: 0;
 }
 
 .nav-list a:hover {

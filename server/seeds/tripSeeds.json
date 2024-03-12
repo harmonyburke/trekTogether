@@ -6,7 +6,9 @@
         "img": "server/seeds/images/colorado.jpg",
         "departureDate": "05/08/2024",
         "returnDate": "07/01/2024",
-        "userId": "65ea8432f19b23ab5073e356"
+        "userId": "65ea8432f19b23ab5073e356",
+        "username": "Travis Shanhun",
+        "joined": false
 
     },
     {
@@ -16,7 +18,9 @@
         "img": "server/seeds/images/colorado.jpg",
         "departureDate": "02/09/2024",
         "returnDate": "07/10/2024",
-        "userId": "65ea8432f19b23ab5073e356"
+        "userId": "65ea8432f19b23ab5073e356",
+        "username": "Travis Shanhun",
+        "joined": true
 
 
     },
@@ -27,7 +31,9 @@
         "img": "server/seeds/images/colorado.jpg",
         "departureDate": "05/04/2024",
         "returnDate": "06/01/2024",
-        "userId": "65ea8432f19b23ab5073e356"
+        "userId": "65ea8432f19b23ab5073e356",
+        "username": "Travis Shanhun",
+        "joined": false
 
 
     },
@@ -38,7 +44,9 @@
         "img": "server/seeds/images/colorado.jpg",
         "departureDate": "05/04/2024",
         "returnDate": "06/01/2024",
-        "userId": "65ea8432f19b23ab5073e356"
+        "userId": "65ea8432f19b23ab5073e357",
+        "username": "Travis Shanhun",
+        "joined": false
 
 
     }

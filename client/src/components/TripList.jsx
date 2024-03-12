@@ -1,51 +1,61 @@
 import defaultPic from "../assets/defaultPic.jpeg";
-// import formatDate from "../utils/helpers";
+import { useMutation } from "@apollo/client";
+import { DELETE_TRIP } from "../utils/mutations";
 
 // import css
 import "../style-components/tripList.css";
+
+
 
 const TripList = (trip) => {
   const loggedInUser = trip.userId;
   const editHref = `/edit/${trip.id}`;
   const tripPageHref = `/trippage/${trip.id}`;
 
-  const d = new Date();
-  const formattedDate = `${(d.getMonth() + 1).toString().padStart(2, "0")}/${d
-    .getDate()
-    .toString()
-    .padStart(2, "0")}/${d.getFullYear()}`;
-  console.log(formattedDate);
-  console.log(trip.departureDate);
+  const [deleteTrip] = useMutation(DELETE_TRIP)
 
-  const currentDate = new Date(); // Use a new Date object for current date
-  const tripDepartureDateParts = trip.departureDate.split("/");
-  const formattedTripDepartureDate = new Date(
-    tripDepartureDateParts[2],
-    tripDepartureDateParts[0] - 1,
-    tripDepartureDateParts[1]
-  );
+  // const d = new Date();
+  // const formattedDate = `${(d.getMonth() + 1).toString().padStart(2, "0")}/${d
+  //   .getDate()
+  //   .toString()
+  //   .padStart(2, "0")}/${d.getFullYear()}`;
+  // console.log(formattedDate);
+  // console.log(trip.departureDate);
 
-  if (currentDate > formattedTripDepartureDate) {
-    console.log("Expired");
-    return;
-  }
+  // const currentDate = new Date(); // Use a new Date object for current date
+  // const tripDepartureDateParts = trip.departureDate.split("/");
+  // const formattedTripDepartureDate = new Date(
+  //   tripDepartureDateParts[2],
+  //   tripDepartureDateParts[0] - 1,
+  //   tripDepartureDateParts[1]
+  // );
 
-  const handleDelete = (e) => {
+  // if (currentDate > formattedTripDepartureDate) {
+  //   console.log("Expired");
+  //   return;
+  // }
+
+  const handleDelete = async (e) => {
     e.preventDefault();
-
     window.confirm(
       "This action can not be reversed, Are you sure you wish to DELETE?"
     );
+    try {
+      await deleteTrip({variables: {tripId: trip.id}})
+    } catch (error) {
+      console.error(error);
+      alert("Your trip failed to delete")
+    }
   };
 
-  const handleRemove = (e) => {
-    e.preventDefault();
+  // const handleRemove = (e) => {
+  //   e.preventDefault();
 
-    window.confirm(
-      "Are you sure you wish to remove this trip from your trips?"
-    );
-    location.reload();
-  };
+  //   window.confirm(
+  //     "Are you sure you wish to remove this trip from your trips?"
+  //   );
+  //   location.reload();
+  // };
 
   return (
     <section className="tripIdea-container">
@@ -72,9 +82,9 @@ const TripList = (trip) => {
                 )}
                 {trip.userId !== loggedInUser && (
                   <>
-                    {/* <p>Created By:</p>
-                    <p className="title">{trip.userId}</p>
-                    <br /> */}
+                    <p>Created By:</p>
+                    <p className="title">{trip.username}</p>
+                    <br />
 
                     <p className="createdAt">
                       {new Date(Number(trip.createdAt)).toDateString()}
@@ -104,15 +114,15 @@ const TripList = (trip) => {
                     </a>
                   </>
                 )}
-                <button type="submit" id="rft-btn" onClick={handleRemove}>
+                {/* <button type="submit" id="rft-btn" onClick={handleRemove}>
                   Remove
-                </button>
+                </button> */}
                 <br />
               </>
             ) : (
               <>
                 {/* <p>Created By:</p>
-                <p className="title">{trip.user}</p>
+                <p className="title">{trip.username}</p>
                 <br /> */}
                 <p>Created At:</p>
                 <p className="createdAt">

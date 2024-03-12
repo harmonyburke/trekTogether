@@ -5,14 +5,13 @@ import { QUERY_SINGLE_TRIP } from "../utils/queries";
 const Edit = () => {
   const tripId = window.location.pathname.split("/").pop();
 
-  const { data } = useQuery(QUERY_SINGLE_TRIP, {
+  const {data} = useQuery(QUERY_SINGLE_TRIP, {
     variables: {
       tripId,
     },
   });
 
   const currentTrip = data?.trip;
-  console.log(currentTrip);
 
   return (
     <section>
