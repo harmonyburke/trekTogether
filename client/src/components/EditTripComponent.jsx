@@ -46,14 +46,10 @@ const EditTripComponent = (trip) => {
           },
         });
         console.log("Trip updated!", updatedTrip);
+        window.location.href = "/mytrips";
       } catch (err) {
         console.error("Error updating trip!", err);
       }
-    };
-
-    const editTripButtonHandler = (e) => {
-      e.preventDefault();
-      window.location.href = "/mytrips";
     };
 
     const imgStyle = {
@@ -136,7 +132,6 @@ const EditTripComponent = (trip) => {
           <br />
           <button
             type="submit"
-            onClick={editTripButtonHandler}
             className="addTrip-submit "
           >
             Edit Trip

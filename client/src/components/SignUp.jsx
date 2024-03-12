@@ -6,7 +6,7 @@ const Signup = (user) => {
   const [addUser, { data: newUser }] = useMutation(ADD_USER);
 
   const [email, setEmail] = useState(user.email);
-  const [name, setName] = useState(user.name);
+  const [username, setUsername] = useState(user.username);
   const [password, setPassword] = useState(user.password);
 
   const handleSubmit = async (e) => {
@@ -15,7 +15,7 @@ const Signup = (user) => {
       await addUser({
         variables: {
           email,
-          name,
+          username,
           password,
         },
       });
@@ -46,7 +46,7 @@ const Signup = (user) => {
           type="text"
           placeholder="Name"
           defaultValue={name}
-          onChange={(e) => setName(e.target.value)}
+          onChange={(e) => setUsername(e.target.value)}
           required
         />{" "}
         <br />
@@ -69,7 +69,7 @@ const Signup = (user) => {
           required
         />{" "}
         <br />
-        <button type="submit" id="login-signup-btn" onChange={handleSubmit}>
+        <button type="submit" id="login-signup-btn" onClick={handleSubmit}>
           Sign Up
         </button>
         <br />

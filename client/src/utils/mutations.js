@@ -1,9 +1,9 @@
 import { gql } from "@apollo/client";
 
 export const ADD_USER = gql`
-  mutation addUser($name: String!, $email: String!, $password: String!) {
-    addUser(name: $name, email: $email, password: $password) {
-      name
+  mutation addUser($username: String!, $email: String!, $password: String!) {
+    addUser(username: $username, email: $email, password: $password) {
+      username
       email
       password
     }
@@ -67,7 +67,7 @@ export const UPDATE_TRIP = gql`
 
 export const DELETE_TRIP = gql`
   mutation deleteTrip($tripId: ID!) {
-    deleteTrip(tripId: $tripID) {
+    deleteTrip(tripId: $tripId) {
       _id
     }
   }
@@ -79,7 +79,7 @@ export const LOGIN = gql`
       token
       user {
         _id
-        name
+        username
       }
     }
   }

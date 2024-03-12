@@ -22,6 +22,9 @@ type User {
 }
 
 type Auth {
+    username: String!
+    email: String!
+    password: String!
     token: ID
     user: User
 }
@@ -66,10 +69,8 @@ type Mutation {
 
     deleteTrip(
             tripId: ID!
-        ): ID
+        ): Trip
 }
-
-
 `;
 
 module.exports = typeDefs;
