@@ -46,16 +46,20 @@ Please reach out if you have any further questions via:
 
 
 <a href='https://github.com/AnnaT7459'> Anna Turner</a>
+<a href='annaeturner259@gmail.com'> Email Anna</a>
 
 <a href='https://github.com/curtiszahniser'> Curtis Zahniser</a>
+<a href='curtiszahniser@gmail.com'> Email Curtis</a>
 
 <a href='https://github.com/harmonyburke'> Harmony Burke</a>
+<a href='theharmonyburke@gmail.com'> Email Harmony</a>
 
 <a href='https://github.com/madelineccstahl'> Madeline Clark</a>
+<a href='madelinclark@outlook.com'> Email Madeline</a>
 
 <a href='https://github.com/RaszeroT'> Travis Shanhun</a>
+<a href='shanhun.codes@gmail.com'> Email Travis</a>
 
-Email: shanhun.codes@gmail.com
 
 ## Dependencies
 
@@ -95,6 +99,7 @@ Email: shanhun.codes@gmail.com
 * Colin Bares - TA
 * Joshua Diehl - TA
 * Ian Von Fange - TA
+* Meg Myers - Tutor
 
 ## License
 
