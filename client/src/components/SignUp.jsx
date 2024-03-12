@@ -20,6 +20,7 @@ const Signup = (user) => {
         },
       });
       console.log("New User added!");
+      window.location.href="/login?"
     } catch (err) {
       console.error("Error creating user.", err);
     }
@@ -34,7 +35,7 @@ const Signup = (user) => {
 
   return (
     <section>
-      <form id="signUp-container" action="/signup" style={imgStyle}>
+      <form id="signUp-container" onClick={handleSubmit} action="/signup" style={imgStyle}>
         <br />
         <br />
         <br />
@@ -69,7 +70,7 @@ const Signup = (user) => {
           required
         />{" "}
         <br />
-        <button type="submit" id="login-signup-btn" onClick={handleSubmit}>
+        <button type="submit" id="login-signup-btn" >
           Sign Up
         </button>
         <br />

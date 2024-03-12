@@ -4,8 +4,6 @@ import auth from "../utils/auth";
 
 const NavBar = () => {
   const isLoggedIn = auth.loggedIn();
-  //   const logOut= auth.logout();
-  // const isLoggedIn = true;
 
   const navLinks = [
     {
