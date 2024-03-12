@@ -6,8 +6,9 @@ import defaultPic from "../assets/defaultPic.jpeg";
 import "../style-components/tripList.css";
 
 const TripList = (trip) => {
-  const loggedInUser = "Anna Turner";
+  const loggedInUser = trip.userId;
   const editHref = `/edit/${trip.id}`;
+  console.log(trip)
 
   const d = new Date();
   const formattedDate = `${(d.getMonth() + 1).toString().padStart(2, '0')}/${d.getDate().toString().padStart(2, '0')}/${d.getFullYear()}`;
@@ -46,37 +47,38 @@ const TripList = (trip) => {
     <section className="tripIdea-container">
       <a className="center" href="/trippage">
         <div className="cardHeader">
-          <img src={trip.img || defaultPic} />
+          <img src={defaultPic} />
         </div>
         <div className="cardBody">
           <h3 className="title title-green">{trip.where}</h3>
           <p>Dates:</p>
           <p className="date">
-            {trip.departureDate} - {trip.returnDate}
+            {new Date(Number (trip.departureDate)).toDateString()} - {new Date (Number (trip.returnDate)).toDateString()}
           </p>
           <br />
           <div className="conditional-container">
             {trip.showDelete ? (
               <>
-                {trip.user === loggedInUser && (
+                {trip.userId === loggedInUser && (
                   <>
                     <p>Your Trip</p>
                     <br />
                   </>
                 )}
-                {trip.user !== loggedInUser && (
+                {trip.userId !== loggedInUser && (
                   <>
-                    <p>Created By:</p>
-                    <p className="title">{trip.user}</p>
-                    <br />
+                    {/* <p>Created By:</p>
+                    <p className="title">{trip.userId}</p>
+                    <br /> */}
+                    
                     <p className="createdAt">
-                      {formatDistance(new Date(trip.createdAt), { addSuffix: true })}
+                      {(new Date(Number (trip.createdAt)).toDateString())}
                     </p>
                     <br />
                   </>
                 )}
                 {/* Conditionally render Edit and Delete buttons based on showDelete */}
-                {trip.user === loggedInUser && (
+                {trip.userId === loggedInUser && (
                   <>
                     <a href={editHref}>
                       <button
@@ -104,11 +106,12 @@ const TripList = (trip) => {
               </>
             ) : (
               <>
-                <p>Created By:</p>
+                {/* <p>Created By:</p>
                 <p className="title">{trip.user}</p>
-                <br />
+                <br /> */}
+                <p>Created At:</p>
                 <p className="createdAt">
-                  {formatDistance(new Date(trip.createdAt), { addSuffix: true })}
+                {new Date(Number (trip.createdAt)).toDateString()}
                 </p>
                 <br />
               </>

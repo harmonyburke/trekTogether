@@ -10,16 +10,14 @@ mutation addUser($name: String!, $email: String!, $password:String!){
 }`;
 
 export const CREATE_TRIP= gql`
-mutation createTrip($budget:Int!, $where:String!, $description: String!, $departureDate:String!, $returnDate:String!, $img: String){
-    createTrip(budget:$budget, where: $where, description: $description, departureDate: $departureDate, returnDate:$returnDate, img: $img){
+mutation createTrip($budget:Int!, $where:String!, $description: String!, $departureDate:String!, $returnDate:String!){
+    createTrip(budget:$budget, where: $where, description: $description, departureDate: $departureDate, returnDate:$returnDate){
         _id
         budget
         where
         description
         departureDate
         returnDate
-        img
-        joined
     }
 }`;
 

@@ -16,6 +16,7 @@ const AddTripComponent = () => {
 
         const handleSubmit = async (e) => {
             e.preventDefault();
+            console.log(Ddate, Rdate)
             try {
                 await createTrip({
                     variables: {
@@ -64,7 +65,7 @@ const AddTripComponent = () => {
                 className="color-change dateInput" 
                 type="date"
                 name="depart"
-                value={Ddate}
+                // value={Ddate}
                 onChange={(e) => setDdate(e.target.value)}
                 /><br />
         
@@ -74,7 +75,7 @@ const AddTripComponent = () => {
                 className="color-change dateInput" 
                 type="date"
                 name="return"
-                value={Rdate}
+                // value={Rdate}
                 onChange={(e) => setRdate(e.target.value)}
                 /><br />
             
