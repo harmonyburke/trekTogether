@@ -23,6 +23,7 @@ const TripList = (trip) => {
         console.log(tripId);
         await deleteTrip({ variables: { tripId } });
         alert("Your trip has successfully deleted");
+        window.location.reload()
       } catch (error) {
         console.error(error);
         alert("Your trip failed to delete");

@@ -22,6 +22,9 @@ type User {
 }
 
 type Auth {
+    username: String!
+    email: String!
+    password: String!
     token: ID
     user: User
 }
