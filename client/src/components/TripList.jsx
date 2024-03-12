@@ -8,7 +8,6 @@ import "../style-components/tripList.css";
 const TripList = (trip) => {
   console.log(trip)
   const tripId = trip.id;
-  const loggedInUser = trip.userId;
   const editHref = `/edit/${tripId}`;
   const tripPageHref = `/trippage/${tripId}`;
 
@@ -53,12 +52,9 @@ const TripList = (trip) => {
             {trip.showDelete ? (
               <>
                
-                {trip.userId !== loggedInUser && (
+                {trip.userId !== trip.loggedInUserId && (
                   <>
-                    <p>Created By:</p>
-                    <p className="title">{trip.username}</p>
-                    <br />
-
+                  <p>Created At:</p>
                     <p className="createdAt">
                       {new Date(Number(trip.createdAt)).toDateString()}
                     </p>
@@ -66,7 +62,7 @@ const TripList = (trip) => {
                   </>
                 )}
                 {/* Conditionally render Edit and Delete buttons based on showDelete */}
-                {trip.userId === loggedInUser && (
+                {trip.userId === trip.loggedInUserId && (
                   <>
                     <a href={editHref}>
                       <button
@@ -96,9 +92,6 @@ const TripList = (trip) => {
               </>
             ) : (
               <>
-                <p>Created By:</p>
-                <p className="title">{trip.username}</p>
-                <br />
                 <p>Created At:</p>
                 <p className="createdAt">
                   {new Date(Number(trip.createdAt)).toDateString()}
