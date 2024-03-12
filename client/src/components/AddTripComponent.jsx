@@ -1,10 +1,8 @@
 import { useState } from "react";
 import { CREATE_TRIP } from "../utils/mutations";
 import { useMutation } from "@apollo/client";
-import { useNavigation } from "react-router-dom";
 
 const AddTripComponent = () => {
-  const navigate = useNavigation();
   const [createTrip, { data: createdTrip }] = useMutation(CREATE_TRIP);
 
   const [where, setWhere] = useState("");
@@ -27,14 +25,14 @@ const AddTripComponent = () => {
         },
       });
       console.log("Trip added!", createdTrip);
-      navigate("/mytrips");
+      window.location.href = "/mytrips";
     } catch (err) {
       console.error("Error adding trip!", err);
     }
   };
 
   const imgStyle = {
-    backgroundImage: "url(/images/img38.jpeg",
+    backgroundImage: "url(/images/img1.jpeg",
     backgroundSize: "cover",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
@@ -42,6 +40,8 @@ const AddTripComponent = () => {
   return (
     <section>
       <form onSubmit={handleSubmit} style={imgStyle} className="addTrip">
+        {/* TODO: somehow set username from loggedin user */}
+        {/* <input value={.username} /> */}
         <input
           id="whereInput"
           className="title color-change"

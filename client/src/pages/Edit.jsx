@@ -12,6 +12,7 @@ const Edit = () => {
   });
 
   const currentTrip = data?.trip;
+  console.log(currentTrip);
 
   return (
     <section>
@@ -19,6 +20,7 @@ const Edit = () => {
         <EditTripComponent
           id={currentTrip._id}
           user={currentTrip.userId}
+          username={currentTrip.username}
           // img={currentTrip.img}
           where={currentTrip.where}
           departureDate={currentTrip.departureDate}

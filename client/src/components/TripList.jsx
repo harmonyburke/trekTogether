@@ -6,8 +6,9 @@ import { DELETE_TRIP } from "../utils/mutations";
 import "../style-components/tripList.css";
 
 const TripList = (trip) => {
+  console.log(trip)
   const tripId = trip.id;
-  const loggedInUser = "65ea8432f19b23ab5073e357";
+  const loggedInUser = trip.userId;
   const editHref = `/edit/${tripId}`;
   const tripPageHref = `/trippage/${tripId}`;
 

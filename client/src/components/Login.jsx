@@ -7,6 +7,14 @@ function Login() {
   const [formState, setFormState] = useState({ email: "", password: "" });
   const [login, { error }] = useMutation(LOGIN);
 
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
+
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -20,16 +28,8 @@ function Login() {
     }
   };
 
-  const handleChange = (event) => {
-    const { username, value } = event.target;
-    setFormState({
-      ...formState,
-      [username]: value,
-    });
-  };
-
   const imgStyle = {
-    backgroundImage: "url(/images/img38.jpeg",
+    backgroundImage: "url(/images/img1.jpeg",
     backgroundSize: "cover",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
