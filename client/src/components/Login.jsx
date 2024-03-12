@@ -47,7 +47,7 @@ function Login() {
                 placeholder='Password'
                 required
                 onChange={handleChange} /> <br />
-                <button type='submit' id='login-signup-btn'>Login</button>
+                <button type='submit' id='login-signup-btn' >Login</button>
                 <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
             </form>
         </section>
