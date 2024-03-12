@@ -36,44 +36,58 @@ To install this application please fork this repo. Then, run in terminal:
 
 //~ npm i
 
+//~ npm run install
+
 To run the application please run in terminal: 
 
-//~ npm start
+//~ npm run develop
 
 ## Creator(s) Information
 
 Please reach out if you have any further questions via:
 
+GitHub:
+* <a href='https://github.com/AnnaT7459'> Anna Turner</a>
+* <a href='https://github.com/curtiszahniser'> Curtis Zahniser</a>
+* <a href='https://github.com/harmonyburke'> Harmony Burke</a>
+* <a href='https://github.com/madelineccstahl'> Madeline Clark</a>
+* <a href='https://github.com/RaszeroT'> Travis Shanhun</a>
 
-<a href='https://github.com/AnnaT7459'> Anna Turner</a>
-<a href='annaeturner259@gmail.com'> Email Anna</a>
-
-<a href='https://github.com/curtiszahniser'> Curtis Zahniser</a>
-<a href='curtiszahniser@gmail.com'> Email Curtis</a>
-
-<a href='https://github.com/harmonyburke'> Harmony Burke</a>
-<a href='theharmonyburke@gmail.com'> Email Harmony</a>
-
-<a href='https://github.com/madelineccstahl'> Madeline Clark</a>
-<a href='madelinclark@outlook.com'> Email Madeline</a>
-
-<a href='https://github.com/RaszeroT'> Travis Shanhun</a>
-<a href='shanhun.codes@gmail.com'> Email Travis</a>
-
+Email:
+* <a href='annaeturner259@gmail.com'>Anna Turner</a>
+* <a href='curtiszahniser@gmail.com'>Curtis Zahniser</a>
+* <a href='theharmonyburke@gmail.com'>Harmony Burke</a>
+* <a href='madelinclark@outlook.com'>Madeline Clark</a>
+* <a href='shanhun.codes@gmail.com'>Travis Shanhun</a>
 
 ## Dependencies
 
+
+### Root
+* apollo/client@3.9.6
+
+### Client
  * @apollo/client@3.7.14
  * @fortawesome/free-brands-svg-icons@6.5.1
  * @fortawesome/react-fontawesome@0.2.0
- * @reduxjs/toolkit@2.2.1
- * datefns@3.3.1
  * react@18.2.0
+ * apollo-boost@0.4.9
+ * jwt-decode@3.1.2
  * react-dom@18.2.0
  * react-router-dom@6.22.2
  * vite@5.1.4
- * @vitejs/plugin-react@4.2.1
- * react-redux@9.1.0
+* @vitejs/plugin-react@4.2.1
+
+ ### Server
+ * @apollo/client@3.9.6
+ * @apollo/server@4.7.1
+ * bcrypt@5.1.0
+ * express@4.17.2
+ * graphql@16.6.0
+ * jsonwebtoken@8.5.1
+ * mongoose@7.0.2
+
+
 
 ## Images of Site:
 
@@ -100,6 +114,7 @@ Please reach out if you have any further questions via:
 * Joshua Diehl - TA
 * Ian Von Fange - TA
 * Meg Myers - Tutor
+* Jaytee Padilla - Tutor
 
 ## License
 
