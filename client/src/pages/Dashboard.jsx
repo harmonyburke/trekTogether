@@ -13,7 +13,7 @@ const Dashboard = () => {
                 <TripList 
                     key={trip.id}
                     id={trip.id}
-                    user={trip.user}
+                    user={trip.userId}
                     img={trip.img}
                     where={trip.where}
                     departureDate={trip.departureDate}

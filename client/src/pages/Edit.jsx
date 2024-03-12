@@ -23,7 +23,7 @@ const Edit = () => {
         <EditTripComponent
           id={currentTrip._id}
           user={currentTrip.userId}
-          img={currentTrip.img}
+          // img={currentTrip.img}
           where={currentTrip.where}
           departureDate={currentTrip.departureDate}
           returnDate={currentTrip.returnDate}

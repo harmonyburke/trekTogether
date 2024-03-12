@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react-hooks/rules-of-hooks */
-import randomImg from "../utils/randomImg";
+// import randomImg from "../utils/randomImg";
 import { useState } from 'react';
 import AddTripComponent from "./AddTripComponent";
 import { useMutation } from "@apollo/client";
@@ -46,7 +46,7 @@ const EditTripComponent = ( trip ) => {
 
     return (
         <section>
-            <form onSubmit={handleSubmit} style={{ backgroundImage: `url(${randomImg()})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} className="addTrip">
+            <form onSubmit={handleSubmit} className="addTrip">
 
             {/* input for WHERE */}
             <input id="whereInput" className='title color-change' type="text" 
@@ -58,11 +58,11 @@ const EditTripComponent = ( trip ) => {
             <br />
 
             {/* input for IMG upload */}
-            <label htmlFor="fileInput" className="title custom-file-upload color-change">
+            {/* <label htmlFor="fileInput" className="title custom-file-upload color-change">
                 <input type="file" id="fileInput" hidden />
                 Click here to upload an image!
             </label>
-            <br />
+            <br /> */}
 
             <div className="dateBudget-container">
                 <label className="title departure-date">Departure Date:</label><br />

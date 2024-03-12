@@ -7,7 +7,7 @@ export const QUERY_TRIPS = gql`
       budget
       where
       description
-      user
+      userId
       img
       departureDate
       returnDate

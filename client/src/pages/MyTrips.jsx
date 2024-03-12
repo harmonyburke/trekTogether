@@ -12,9 +12,9 @@ if (loading) return <div>Loading...</div>
         <section>
             {trips.map((trip) => (
                 <TripList
-                    key={trip.id}
-                    id={trip.id}
-                    user={trip.user}
+                    key={trip._id}
+                    id={trip._id}
+                    user={trip.userId}
                     img={trip.img }
                     where={trip.where}
                     departureDate={trip.departureDate}
