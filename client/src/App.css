@@ -1,51 +1,51 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quattrocento:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quattrocento:wght@400;700&display=swap");
 
 :root {
-    --grey: #292F36;
-    --white: #fffeff;
-    --green: #96F550;
+  --grey: #292f36;
+  --white: #fffeff;
+  --green: #96f550;
 }
 
-
 * {
-    font-family: "Quattrocento", serif;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    background-color: var(--grey);
-    color: var(--white);
+  font-family: "Quattrocento", serif;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-color: var(--grey);
+  color: var(--white);
 }
 
 .title {
-    font-family: 'Playfair Display';
-    font-weight: bold;
+  font-family: "Playfair Display";
+  font-weight: bold;
 }
 
 /* This removes placeholder in input once clicked */
 input:focus::-webkit-input-placeholder,
 textarea:focus::-webkit-input-placeholder {
-    opacity: 0;
+  opacity: 0;
 }
 
 input:focus::-moz-placeholder,
 textarea:focus::-moz-placeholder {
-    opacity: 0;
+  opacity: 0;
 }
 
 input:focus::-ms-placeholder,
 textarea:focus::-ms-placeholder {
-    opacity: 0;
+  opacity: 0;
 }
 
 input::placeholder {
-    color: var(--grey);
+  color: var(--grey);
 }
 
-input:focus, textarea:focus  {
-    border: solid 2px var(--green);
-    outline: var(--green);
+input:focus,
+textarea:focus {
+  border: solid 2px var(--green);
+  outline: var(--green);
 }
 
 textarea::placeholder {
-    color: var(--grey);
+  color: var(--grey);
 }

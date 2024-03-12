@@ -1,108 +1,110 @@
 /* tripList */
 
 .tripIdea-container {
-    border: solid 1rem;
-    border-radius: 20px;
-    width: 18%;
-    max-width: 200px;
-    display: inline-block;
-    margin: 1em;
-    box-shadow: 10px 10px 5px black;
+  border: solid 1rem;
+  border-radius: 20px;
+  width: 18%;
+  max-width: 200px;
+  display: inline-block;
+  margin: 1em;
+  box-shadow: 10px 10px 5px black;
 }
 
 .tripIdea-container a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .cardHeader {
-   height: 8em;
+  height: 8em;
 }
 
 img {
-    max-height: 100%;
-    aspect-ratio: auto;
+  max-height: 100%;
+  aspect-ratio: auto;
 }
 
 .tripIdea-container:hover {
-    padding: 1em;
-    box-shadow: 5px 5px 2.5px black;
-    border: solid 1px var(--green);
-    background-color: var(--green);
+  padding: 1em;
+  box-shadow: 5px 5px 2.5px black;
+  border: solid 1px var(--green);
+  background-color: var(--green);
 }
 
 .title-green {
-    margin-bottom: .25em;
-    padding-bottom: .25em;
-    border-bottom: solid 1px var(--green);
-    color: var(--green);
+  margin-bottom: 0.25em;
+  padding-bottom: 0.25em;
+  border-bottom: solid 1px var(--green);
+  color: var(--green);
 }
 
 .date {
-    color: var(--green);
+  color: var(--green);
 }
 
 .myTrips-view {
-    margin: .5em ;
-    width: 35%;
+  margin: 0.5em;
+  width: 35%;
 }
 
 .conditional-container {
-   height: 150px;
+  height: 150px;
 }
 
 #rft-btn {
-    padding: .5em 1em;
-    border-radius: 10px;
-    box-shadow: 5px 5px 2px black;
-    border: solid 1px var(--white);
+  padding: 0.5em 1em;
+  border-radius: 10px;
+  box-shadow: 5px 5px 2px black;
+  border: solid 1px var(--white);
 }
 
 #rft-btn:hover {
-    cursor: pointer;
-    box-shadow: 2px 2px 2px black;
-    background-color: red;
+  cursor: pointer;
+  box-shadow: 2px 2px 2px black;
+  background-color: red;
 }
 
-#edit, #delete {
-    border: solid 1px;
-    border-radius: 10px;
-    padding: .1em;
-    box-shadow: 5px 5px 2.5px black;
+#edit,
+#delete {
+  border: solid 1px;
+  border-radius: 10px;
+  padding: 0.1em;
+  box-shadow: 5px 5px 2.5px black;
 }
 
-#edit:hover, #delete:hover {
-    padding: .1em;
-    border-radius: 10px;
-    box-shadow: 2px 2px 2px black;
-    background-color: var(--green);
-    border: solid 1px var(--white);
+#edit:hover,
+#delete:hover {
+  padding: 0.1em;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px black;
+  background-color: var(--green);
+  border: solid 1px var(--white);
 }
 
 #edit:hover {
-    background-color: var(--green);
-    border: solid 1px var(--white);
+  background-color: var(--green);
+  border: solid 1px var(--white);
 }
 
 #delete:hover {
-    border: solid 1px var(--white);
-    background-color: red;
+  border: solid 1px var(--white);
+  background-color: red;
 }
 
 /* anti-squish cards */
 @media screen and (max-width: 1100px) {
-    .tripIdea-container {
-        width: 25%;
-    }
- }
+  .tripIdea-container {
+    width: 25%;
+  }
+}
 
- @media screen and (max-width: 820px) {
-    .tripIdea-container {
-        width: 40%;
-    }
- }
+@media screen and (max-width: 820px) {
+  .tripIdea-container {
+    width: 40%;
+  }
+}
 
- @media screen and (max-width: 640px) {
-    .tripIdea-container {
-        width: 90%;
-    }
- }
+@media screen and (max-width: 640px) {
+  .tripIdea-container {
+    width: 90%;
+  }
+}

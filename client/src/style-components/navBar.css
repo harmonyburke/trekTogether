@@ -1,57 +1,52 @@
 /*  navBar */
 
 .nav-list {
-    width: 25%;
-    margin-bottom: 1em;
-    display: inline-block;
-    text-align: center;
+  width: 25%;
+  margin-bottom: 1em;
+  display: inline-block;
+  text-align: center;
 }
 
 .nav-list ul {
-    list-style: none;
+  list-style: none;
 }
 
 .nav-list a:hover {
-    text-decoration: underline;
-    padding: .25em 2em;
-    border-radius: 15px;
-    border: solid 1px var(--white);
-    background-color: var(--green);
+  text-decoration: underline;
+  padding: 0.25em 2em;
+  border-radius: 15px;
+  border: solid 1px var(--white);
+  background-color: var(--green);
 }
 
-  /* tablets */
-  @media screen and (max-width: 820px) {
-
-    .main-nav {
-      text-align: center;
-      border-top: solid 2px var(--white);
-
-    }
-
-    .nav-list {
-      width: 34%;
-      margin-bottom: 1em;
-      margin-top: 1em;
-    }
-
-    .nav a:hover {
-      padding: .25em 2em .25em 2em;
-  
-    }
+/* tablets */
+@media screen and (max-width: 820px) {
+  .main-nav {
+    text-align: center;
+    border-top: solid 2px var(--white);
   }
 
-  /* mobile */
-  @media screen and (max-width: 540px) {
-
-    .main-nav {
-        margin-top: 1em;
-        border-top: solid 2px var(--white);
-    }
-
-    .nav-list {
-      width: 100%;
-      margin: 1em auto 1em;
-      font-size: 1em;
-    }
+  .nav-list {
+    width: 34%;
+    margin-bottom: 1em;
+    margin-top: 1em;
   }
 
+  .nav a:hover {
+    padding: 0.25em 2em 0.25em 2em;
+  }
+}
+
+/* mobile */
+@media screen and (max-width: 540px) {
+  .main-nav {
+    margin-top: 1em;
+    border-top: solid 2px var(--white);
+  }
+
+  .nav-list {
+    width: 100%;
+    margin: 1em auto 1em;
+    font-size: 1em;
+  }
+}

@@ -1,16 +1,15 @@
 /* addTrip */
 
-
 label {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 #whereInput {
- font-size: 1.5em;
- margin: 1em;
- border-radius: 10px;
- text-align: center;
- box-shadow: 10px 10px 2px black;
+  font-size: 1.5em;
+  margin: 1em;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 10px 10px 2px black;
 }
 
 #whereInput:hover,
@@ -18,8 +17,8 @@ label {
 .dateInput:hover,
 .budgetInput:hover,
 .textAreaInput:hover {
-    box-shadow: 5px 5px 2.5px black;
-    border: solid 1px var(--green);
+  box-shadow: 5px 5px 2.5px black;
+  border: solid 1px var(--green);
 }
 
 #whereInput:focus,
@@ -27,77 +26,77 @@ label {
 .dateInput:focus,
 .budgetInput:focus,
 .textAreaInput:focus {
-    outline: var(--green);
+  outline: var(--green);
 }
 
 .custom-file-upload {
-    font-size: 1.5em;
-    padding: .5em;
-    border-radius: 20px;
-    margin: 2em 0;
-    box-shadow: 10px 10px 2px black;
+  font-size: 1.5em;
+  padding: 0.5em;
+  border-radius: 20px;
+  margin: 2em 0;
+  box-shadow: 10px 10px 2px black;
 }
 
 .dateBudget-container {
-    margin: 3em 0 3em 0;
-    background-color: transparent;
+  margin: 3em 0 3em 0;
+  background-color: transparent;
 }
 
 .departure-date {
-    font-size: 1em;
-    margin: 3em 0 1em 0;
+  font-size: 1em;
+  margin: 3em 0 1em 0;
 }
 
 .dateInput,
 .budgetInput {
-    text-align: center;
-    font-size: 1em;
-    padding: .25em;
-    border-radius: 10px;
-    margin: .75em 0;
-    box-shadow: 10px 10px 2px black;
+  text-align: center;
+  font-size: 1em;
+  padding: 0.25em;
+  border-radius: 10px;
+  margin: 0.75em 0;
+  box-shadow: 10px 10px 2px black;
 }
 
 .textAreaInput {
-    text-align: center;
-    resize: none;
-    padding: 1em;
-    width: 75%;
-    height: 15em;
-    border-radius: 20px;
-    box-shadow: 10px 10px 2px black;
+  text-align: center;
+  resize: none;
+  padding: 1em;
+  width: 75%;
+  height: 15em;
+  border-radius: 20px;
+  box-shadow: 10px 10px 2px black;
 }
 
 .addTrip-submit {
-    margin: 1em 0 1em 0;
-    font-size: 2em;
-    padding: .25em 2em;
-    border-radius: 50px;
-    color: var(--grey);
-    background-color: var(--green);
-    box-shadow: 10px 10px 2px black;
+  margin: 1em 0 1em 0;
+  font-size: 2em;
+  padding: 0.25em 2em;
+  border-radius: 50px;
+  color: var(--grey);
+  background-color: var(--green);
+  box-shadow: 10px 10px 2px black;
 }
 
 .addTrip-submit:hover {
-    box-shadow: 2px 2px 2px var(--white);
-    border: solid 2px var(--white);
-    color: var(--white);
+  box-shadow: 2px 2px 2px var(--white);
+  border: solid 2px var(--white);
+  color: var(--white);
 }
 
 span {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 @media screen and (max-width: 420px) {
-    .custom-file-upload {
-        font-size: 1em;
-    }
+  .custom-file-upload {
+    font-size: 1em;
+  }
 
-    #whereInput {
-        font-size: 1em;
-        margin: 1em;
-        border-radius: 10px;
-        text-align: center;
-        box-shadow: 10px 10px 2px black;
-       }
+  #whereInput {
+    font-size: 1em;
+    margin: 1em;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 10px 10px 2px black;
+  }
 }
