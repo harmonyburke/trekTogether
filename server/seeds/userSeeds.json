@@ -1,26 +1,26 @@
 [
   {
-    "name": "Harmony",
+    "username": "Harmony",
     "email": "harmonyburke@gmail.com",
     "password": "strongpassword234"
   },
   {
-    "name": "Anna",
+    "username": "Anna",
     "email": "annaturner@gmail.com",
     "password": "strongpassword123"
   },
   {
-    "name": "Curtis",
+    "username": "Curtis",
     "email": "curtiszahniser@gmail.com",
     "password": "strongpassword456"
   },
   {
-    "name": "Travis",
+    "username": "Travis",
     "email": "traviscelli@gmail.com",
     "password": "strongpassword246"
   },
   {
-    "name": "Maddie",
+    "username": "Maddie",
     "email": "maddieclark@gmail.com",
     "password": "strongpassword789"
   }

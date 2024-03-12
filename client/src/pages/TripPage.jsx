@@ -15,8 +15,12 @@ const TripPage = () => {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
 
-  console.log({ data });
   const currentTrip = data.trip;
+
+  const joinTripButtonHandler = (e) => {
+    e.preventDefault();
+    window.location.href = "/mytrips";
+  };
 
   return (
     <section>
@@ -48,7 +52,7 @@ const TripPage = () => {
                 {new Date(Number(currentTrip.createdAt)).toDateString()}
               </p>
             </div>
-            <button id="join-btn" className="color-change" type="submit">
+            <button id="join-btn" className="color-change" onClick={joinTripButtonHandler} type="submit">
               ✔ Join
             </button>
           </div>

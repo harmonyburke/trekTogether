@@ -2,26 +2,31 @@ import defaultPic from "../assets/defaultPic.jpeg";
 import { useMutation } from "@apollo/client";
 import { DELETE_TRIP } from "../utils/mutations";
 
-// import css
+// Import CSS
 import "../style-components/tripList.css";
 
 const TripList = (trip) => {
+  const tripId = trip.id;
   const loggedInUser = "65ea8432f19b23ab5073e357";
-  const editHref = `/edit/${trip.id}`;
-  const tripPageHref = `/trippage/${trip.id}`;
+  const editHref = `/edit/${tripId}`;
+  const tripPageHref = `/trippage/${tripId}`;
 
   const [deleteTrip] = useMutation(DELETE_TRIP);
 
   const handleDelete = async (e) => {
     e.preventDefault();
-    window.confirm(
-      "This action can not be reversed, Are you sure you wish to DELETE?"
+    const confirmed = window.confirm(
+      "This action cannot be reversed. Are you sure you wish to DELETE?"
     );
-    try {
-      await deleteTrip({ variables: { tripId: trip.id } });
-    } catch (error) {
-      console.error(error);
-      alert("Your trip failed to delete");
+    if (confirmed) {
+      try {
+        console.log(tripId);
+        await deleteTrip({ variables: { tripId } });
+        alert("Your trip has successfully deleted");
+      } catch (error) {
+        console.error(error);
+        alert("Your trip failed to delete");
+      }
     }
   };
 
@@ -35,19 +40,17 @@ const TripList = (trip) => {
           <h3 className="title title-green">{trip.where}</h3>
           <p>Dates:</p>
           <p className="date">
-            {new Date(Number(trip.departureDate)).toDateString()} -{" "}
-            {new Date(Number(trip.returnDate)).toDateString()}
+            {new Date(Number(trip.departureDate)).toDateString()}
+          </p>
+          <p className="date">-</p>
+          <p className="date">
+          {new Date(Number(trip.returnDate)).toDateString()}
           </p>
           <br />
           <div className="conditional-container">
             {trip.showDelete ? (
               <>
-                {trip.userId === loggedInUser && (
-                  <>
-                    <p>Your Trip</p>
-                    <br />
-                  </>
-                )}
+               
                 {trip.userId !== loggedInUser && (
                   <>
                     <p>Created By:</p>
@@ -72,13 +75,15 @@ const TripList = (trip) => {
                       </button>
                     </a>
                     <a href="/delete">
-                      <button
-                        id="delete"
-                        className="dashboard-view myTrips-view material-symbols-outlined"
-                        onClick={handleDelete}
-                      >
-                        Delete
-                      </button>
+                      <form onSubmit={handleDelete}>
+                        <button
+                          id="delete"
+                          type="submit"
+                          className="dashboard-view myTrips-view material-symbols-outlined"
+                        >
+                          Delete
+                        </button>
+                      </form>
                     </a>
                   </>
                 )}

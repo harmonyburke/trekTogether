@@ -3,9 +3,9 @@ import "../style-components/navBar.css";
 import auth from "../utils/auth";
 
 const NavBar = () => {
-  const isLoggedIn = auth.loggedIn();
+  // const isLoggedIn = auth.loggedIn();
   //   const logOut= auth.logout();
-  // const isLoggedIn = true;
+  const isLoggedIn = true;
 
   const navLinks = [
     {
@@ -45,7 +45,7 @@ const NavBar = () => {
         ) : (
           <ul>
             <li>
-              <Link className="nav-list" to={"/auth"}>Login / Signup</Link>
+              <Link className="nav-list" to={"/auth"}>Log In / Sign Up</Link>
             </li>
           </ul>
         )}

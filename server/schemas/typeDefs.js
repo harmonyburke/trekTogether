@@ -66,10 +66,8 @@ type Mutation {
 
     deleteTrip(
             tripId: ID!
-        ): ID
+        ): Trip
 }
-
-
 `;
 
 module.exports = typeDefs;
