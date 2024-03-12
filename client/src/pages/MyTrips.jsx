@@ -9,11 +9,13 @@ const MyTrips = () => {
   if (loading) return <div>Loading...</div>;
   return (
     <section>
+      
       {trips.map((trip) => (
         <TripList
           key={trip._id}
           id={trip._id}
-          user={trip.userId}
+          userId={trip.userId}
+          username={trip.username}
           img={trip.img}
           where={trip.where}
           departureDate={trip.departureDate}

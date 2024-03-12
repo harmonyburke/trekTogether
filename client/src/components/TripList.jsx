@@ -5,35 +5,12 @@ import { DELETE_TRIP } from "../utils/mutations";
 // import css
 import "../style-components/tripList.css";
 
-
-
 const TripList = (trip) => {
-  const loggedInUser = trip.userId;
+  const loggedInUser = "65ea8432f19b23ab5073e357";
   const editHref = `/edit/${trip.id}`;
   const tripPageHref = `/trippage/${trip.id}`;
 
-  const [deleteTrip] = useMutation(DELETE_TRIP)
-
-  // const d = new Date();
-  // const formattedDate = `${(d.getMonth() + 1).toString().padStart(2, "0")}/${d
-  //   .getDate()
-  //   .toString()
-  //   .padStart(2, "0")}/${d.getFullYear()}`;
-  // console.log(formattedDate);
-  // console.log(trip.departureDate);
-
-  // const currentDate = new Date(); // Use a new Date object for current date
-  // const tripDepartureDateParts = trip.departureDate.split("/");
-  // const formattedTripDepartureDate = new Date(
-  //   tripDepartureDateParts[2],
-  //   tripDepartureDateParts[0] - 1,
-  //   tripDepartureDateParts[1]
-  // );
-
-  // if (currentDate > formattedTripDepartureDate) {
-  //   console.log("Expired");
-  //   return;
-  // }
+  const [deleteTrip] = useMutation(DELETE_TRIP);
 
   const handleDelete = async (e) => {
     e.preventDefault();
@@ -41,21 +18,12 @@ const TripList = (trip) => {
       "This action can not be reversed, Are you sure you wish to DELETE?"
     );
     try {
-      await deleteTrip({variables: {tripId: trip.id}})
+      await deleteTrip({ variables: { tripId: trip.id } });
     } catch (error) {
       console.error(error);
-      alert("Your trip failed to delete")
+      alert("Your trip failed to delete");
     }
   };
-
-  // const handleRemove = (e) => {
-  //   e.preventDefault();
-
-  //   window.confirm(
-  //     "Are you sure you wish to remove this trip from your trips?"
-  //   );
-  //   location.reload();
-  // };
 
   return (
     <section className="tripIdea-container">
@@ -121,9 +89,9 @@ const TripList = (trip) => {
               </>
             ) : (
               <>
-                {/* <p>Created By:</p>
+                <p>Created By:</p>
                 <p className="title">{trip.username}</p>
-                <br /> */}
+                <br />
                 <p>Created At:</p>
                 <p className="createdAt">
                   {new Date(Number(trip.createdAt)).toDateString()}
@@ -139,3 +107,33 @@ const TripList = (trip) => {
 };
 
 export default TripList;
+
+// const d = new Date();
+// const formattedDate = `${(d.getMonth() + 1).toString().padStart(2, "0")}/${d
+//   .getDate()
+//   .toString()
+//   .padStart(2, "0")}/${d.getFullYear()}`;
+// console.log(formattedDate);
+// console.log(trip.departureDate);
+
+// const currentDate = new Date(); // Use a new Date object for current date
+// const tripDepartureDateParts = trip.departureDate.split("/");
+// const formattedTripDepartureDate = new Date(
+//   tripDepartureDateParts[2],
+//   tripDepartureDateParts[0] - 1,
+//   tripDepartureDateParts[1]
+// );
+
+// if (currentDate > formattedTripDepartureDate) {
+//   console.log("Expired");
+//   return;
+// }
+
+// const handleRemove = (e) => {
+//   e.preventDefault();
+
+//   window.confirm(
+//     "Are you sure you wish to remove this trip from your trips?"
+//   );
+//   location.reload();
+// };

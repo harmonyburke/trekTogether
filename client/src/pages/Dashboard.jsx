@@ -14,6 +14,7 @@ const Dashboard = () => {
           key={trip._id}
           id={trip._id}
           user={trip.userId}
+          username={trip.username}
           img={trip.img}
           where={trip.where}
           departureDate={trip.departureDate}
