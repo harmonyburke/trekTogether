@@ -2,7 +2,7 @@
 const Signup = () => {
 
     const imgStyle =  { 
-        backgroundImage: `url(/images/img7.jpeg)`, 
+        backgroundImage: `url(/images/img2.jpeg)`, 
         backgroundSize: 'cover', 
         backgroundPosition: 'center', 
         backgroundRepeat: 'no-repeat' }

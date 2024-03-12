@@ -3,7 +3,7 @@ import  '../style/auth.css'
 const Auth = () => {
 
     const imgStyle =  { 
-        backgroundImage: 'url(/images/img33.avif)', 
+        backgroundImage: 'url(/images/img4.webp)', 
         backgroundSize: 'cover', 
         backgroundPosition: 'center', 
         backgroundRepeat: 'no-repeat' }

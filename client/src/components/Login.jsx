@@ -1,6 +1,6 @@
 const Login = () => {
     const imgStyle =  { 
-    backgroundImage: `url(/images/img2.jpg)`, 
+    backgroundImage: `url(/images/img3.jpg)`, 
     backgroundSize: 'cover', 
     backgroundPosition: 'center', 
     backgroundRepeat: 'no-repeat' }

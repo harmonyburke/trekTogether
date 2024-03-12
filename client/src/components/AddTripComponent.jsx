@@ -34,7 +34,7 @@ const AddTripComponent = () => {
 }
 
 const imgStyle =  { 
-    backgroundImage: `url(/images/img32.jpg)`, 
+    backgroundImage: `url(/images/img6.jpg)`, 
     backgroundSize: 'cover', 
     backgroundPosition: 'center', 
     backgroundRepeat: 'no-repeat' }

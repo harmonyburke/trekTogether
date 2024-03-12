@@ -44,7 +44,7 @@ const EditTripComponent = ( trip ) => {
         };
 
         const imgStyle =  { 
-            backgroundImage: `url(/images/img8.jpg)`, 
+            backgroundImage: `url(/images/img5.jpg)`, 
             backgroundSize: 'cover', 
             backgroundPosition: 'center', 
             backgroundRepeat: 'no-repeat' }
