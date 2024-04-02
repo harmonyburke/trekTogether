@@ -5,7 +5,6 @@ import { QUERY_TRIPS } from "../utils/queries";
 const Dashboard = () => {
   const { data, loading } = useQuery(QUERY_TRIPS);
   const trips = data?.trips || [];
-  console.log(data);
   if (loading) return <div>Loading...</div>;
   return (
     <section>
