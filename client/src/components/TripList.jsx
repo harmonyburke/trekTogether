@@ -6,7 +6,6 @@ import { DELETE_TRIP } from "../utils/mutations";
 import "../style-components/tripList.css";
 
 const TripList = (trip) => {
-  console.log(trip)
   const tripId = trip.id;
   const editHref = `/edit/${tripId}`;
   const tripPageHref = `/trippage/${tripId}`;
@@ -23,7 +22,7 @@ const TripList = (trip) => {
         console.log(tripId);
         await deleteTrip({ variables: { tripId } });
         alert("Your trip has successfully deleted");
-        window.location.reload()
+        window.location.reload();
       } catch (error) {
         console.error(error);
         alert("Your trip failed to delete");
@@ -45,16 +44,15 @@ const TripList = (trip) => {
           </p>
           <p className="date">-</p>
           <p className="date">
-          {new Date(Number(trip.returnDate)).toDateString()}
+            {new Date(Number(trip.returnDate)).toDateString()}
           </p>
           <br />
           <div className="conditional-container">
             {trip.showDelete ? (
               <>
-               
                 {trip.userId !== trip.loggedInUserId && (
                   <>
-                  <p>Created At:</p>
+                    <p>Created At:</p>
                     <p className="createdAt">
                       {new Date(Number(trip.createdAt)).toDateString()}
                     </p>
